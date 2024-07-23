@@ -1,0 +1,683 @@
+//******************************BUSMASTER Messages and signals Database ******************************//
+
+[DATABASE_VERSION] 1.3
+
+[PROTOCOL] CAN
+
+[BUSMASTER_VERSION] [3.2.2]
+[NUMBER_OF_MESSAGES] 39
+[START_MSG] VECTOR__INDEPENDENT_SIG_MSG,0,0,3,0,X,Vector__XXX
+[START_SIGNALS] Required_Action,8,1,0,U,255,0,1,0,1,,,
+[START_SIGNALS] Peripherals_Status,16,1,0,U,65535,0,1,0,1,,,
+[START_SIGNALS] Crash_Detection,1,1,0,U,1,0,1,0,1,,,
+[END_MSG]
+
+[START_MSG] Board_Temperatures,1044,8,5,0,S,BMS_Master
+[START_SIGNALS] IC774_Sec_Temperature,8,4,0,I,127,-128,1,0,1,Celsius,,
+[START_SIGNALS] IC774_Prim_Temperature,8,5,0,I,32767,-32768,1,0,1,Celsius,,
+[START_SIGNALS] IC772_Temperature,8,3,0,I,127,-128,1,0,1,Celsius,,
+[START_SIGNALS] Balancing_Temperature,8,2,0,I,127,-128,1,0,1,Celsius,,
+[START_SIGNALS] PCB_Temperature,8,1,0,I,127,-128,1,0,1,Celsius,,
+[END_MSG]
+
+[START_MSG] MaskCell_MSMT_02,1299,8,2,0,S,BMS_Master
+[START_SIGNALS] MaskCell_PFMSMT,32,5,0,U,4.29497e+09,0,1,0,1,,,
+[START_SIGNALS] MaskCell_PFOMSMT,32,1,0,U,4.29497e+09,0,1,0,1,,,
+[END_MSG]
+
+[START_MSG] MaskCell_MSMT_01,1298,8,2,0,S,BMS_Master
+[START_SIGNALS] MaskCell_FMSMT,32,5,0,U,4.29497e+09,0,1,0,1,,,
+[START_SIGNALS] MaskCell_WMSMT,32,1,0,U,4.29497e+09,0,1,0,1,,,
+[END_MSG]
+
+[START_MSG] MaskCell_OCL,1297,8,2,0,S,BMS_Master
+[START_SIGNALS] MaskCell_FOCL,32,5,0,U,4.29497e+09,0,1,0,1,,,
+[START_SIGNALS] MaskCell_WOCL,32,1,0,U,4.29497e+09,0,1,0,1,,,
+[END_MSG]
+
+[START_MSG] MaskCell_USOC_02,1296,8,2,0,S,BMS_Master
+[START_SIGNALS] MaskCell_PFUSOC,32,5,0,U,4.29497e+09,0,1,0,1,,,
+[START_SIGNALS] MaskCell_PFDUSOC,32,1,0,U,4.29497e+09,0,1,0,1,,,
+[END_MSG]
+
+[START_MSG] MaskCell_USOC_01,1295,8,2,0,S,BMS_Master
+[START_SIGNALS] MaskCell_FUSOC,32,5,0,U,4.29497e+09,0,1,0,1,,,
+[START_SIGNALS] MaskCell_WUSOC,32,1,0,U,4.29497e+09,0,1,0,1,,,
+[END_MSG]
+
+[START_MSG] MaskCell_OSOC_02,1294,8,2,0,S,BMS_Master
+[START_SIGNALS] MaskCell_PFOSOC,32,5,0,U,4.29497e+09,0,1,0,1,,,
+[START_SIGNALS] MaskCell_PFDOSOC,32,1,0,U,4.29497e+09,0,1,0,1,,,
+[END_MSG]
+
+[START_MSG] MaskCell_OSOC_01,1293,8,2,0,S,BMS_Master
+[START_SIGNALS] MaskCell_POSOC,32,5,0,U,4.29497e+09,0,1,0,1,,,
+[START_SIGNALS] MaskCell_WOSOC,32,1,0,U,4.29497e+09,0,1,0,1,,,
+[END_MSG]
+
+[START_MSG] MaskCell_UT_02,1292,8,2,0,S,BMS_Master
+[START_SIGNALS] MaskCell_PFUT,32,5,0,U,4.29497e+09,0,1,0,1,,,
+[START_SIGNALS] MaskCell_PFDUT,32,1,0,U,4.29497e+09,0,1,0,1,,,
+[END_MSG]
+
+[START_MSG] MaskCell_UT_01,1291,8,2,0,S,BMS_Master
+[START_SIGNALS] MaskCell_FUT,32,5,0,U,4.29497e+09,0,1,0,1,,,
+[START_SIGNALS] MaskCell_WUT,32,1,0,U,4.29497e+09,0,1,0,1,,,
+[END_MSG]
+
+[START_MSG] MaskCell_OT_02,1290,8,2,0,S,BMS_Master
+[START_SIGNALS] MaskCell_PFOT,32,5,0,U,4.29497e+09,0,1,0,1,,,
+[START_SIGNALS] MaskCell_PFDOT,32,1,0,U,4.29497e+09,0,1,0,1,,,
+[END_MSG]
+
+[START_MSG] MaskCell_OT_01,1289,8,2,0,S,BMS_Master
+[START_SIGNALS] MaskCell_FOT,32,5,0,U,4.29497e+09,0,1,0,1,,,
+[START_SIGNALS] MaskCell_WOT,32,1,0,U,4.29497e+09,0,1,0,1,,,
+[END_MSG]
+
+[START_MSG] MaskCell_UV_02,1288,8,2,0,S,BMS_Master
+[START_SIGNALS] MaskCell_PFUV,32,5,0,U,4.29497e+09,0,1,0,1,,,
+[START_SIGNALS] MaskCell_PFDUV,32,1,0,U,4.29497e+09,0,1,0,1,,,
+[END_MSG]
+
+[START_MSG] MaskCell_UV_01,1287,8,2,0,S,BMS_Master
+[START_SIGNALS] MaskCell_FUV,32,5,0,U,4.29497e+09,0,1,0,1,,,
+[START_SIGNALS] MaskCell_WUV,32,1,0,U,4.29497e+09,0,1,0,1,,,
+[END_MSG]
+
+[START_MSG] MaskCell_OV_02,1286,8,2,0,S,BMS_Master
+[START_SIGNALS] MaskCell_PFOV,32,5,0,U,4.29497e+09,0,1,0,1,,,
+[START_SIGNALS] MaskCell_PFDOV,32,1,0,U,4.29497e+09,0,1,0,1,,,
+[END_MSG]
+
+[START_MSG] MaskCell_OV_01,1285,8,2,0,S,BMS_Master
+[START_SIGNALS] MaskCell_FOV,32,5,0,U,4.29497e+09,0,1,0,1,,,
+[START_SIGNALS] MaskCell_WOV,32,1,0,U,4.29497e+09,0,1,0,1,,,
+[END_MSG]
+
+[START_MSG] Diagnostic_Message,16,8,7,0,S,BMS_Master
+[START_SIGNALS] Not_Cell_NTC,8,8,0,U,255,0,1,0,1,,m0,
+[START_SIGNALS] NTC_Num,8,8,0,U,255,0,1,0,1,,m2,
+[START_SIGNALS] Cell_Num,8,8,0,U,255,0,1,0,1,,m1,
+[START_SIGNALS] Sel_Cells_NTC,8,7,0,U,255,0,1,0,1,,M,
+[START_SIGNALS] Timestamp,32,3,0,U,4.29497e+09,0,1,0,1,,,
+[START_SIGNALS] Diag_Code,8,2,0,U,255,0,1,0,1,,,
+[VALUE_DESCRIPTION] "Not Specified",0
+[VALUE_DESCRIPTION] "Diag_Cell_WOV",1
+[VALUE_DESCRIPTION] "Diag_Cell_FOV",2
+[VALUE_DESCRIPTION] "Diag_Cell_PFDOV",3
+[VALUE_DESCRIPTION] "Diag_Cell_PFOV",4
+[VALUE_DESCRIPTION] "Diag_Cell_WUV",5
+[VALUE_DESCRIPTION] "Diag_Cell_FUV",6
+[VALUE_DESCRIPTION] "Diag_Cell_PFDUV",7
+[VALUE_DESCRIPTION] "Diag_Cell_PFUV",8
+[VALUE_DESCRIPTION] "Diag_Cell_WOT",9
+[VALUE_DESCRIPTION] "Diag_Cell_FOT",10
+[VALUE_DESCRIPTION] "Diag_Cell_PFDOT",11
+[VALUE_DESCRIPTION] "Diag_Cell_PFOT",12
+[VALUE_DESCRIPTION] "Diag_Cell_WUT",13
+[VALUE_DESCRIPTION] "Diag_Cell_FUT",14
+[VALUE_DESCRIPTION] "Diag_Cell_PFUT",15
+[VALUE_DESCRIPTION] "Diag_Cell_WOSOC",16
+[VALUE_DESCRIPTION] "Diag_Cell_FOSOC",17
+[VALUE_DESCRIPTION] "Diag_Cell_PFSOC",18
+[VALUE_DESCRIPTION] "Diag_Cell_WUSOC",19
+[VALUE_DESCRIPTION] "Diag_Cell_FUSOC",20
+[VALUE_DESCRIPTION] "Diag_Cell_PFUSOC",21
+[VALUE_DESCRIPTION] "Diag_Cell_FOCV",22
+[VALUE_DESCRIPTION] "Diag_Cell_WRIR",23
+[VALUE_DESCRIPTION] "Diag_Cell_FRIR",24
+[VALUE_DESCRIPTION] "Diag_Batt_WICV",25
+[VALUE_DESCRIPTION] "Diag_Batt_FICV",26
+[VALUE_DESCRIPTION] "Diag_Batt_PFICV",27
+[VALUE_DESCRIPTION] "Diag_Batt_WACCVM",28
+[VALUE_DESCRIPTION] "Diag_Batt_FACCVM",29
+[VALUE_DESCRIPTION] "Diag_Batt_WOV",30
+[VALUE_DESCRIPTION] "Diag_Batt_FOV",31
+[VALUE_DESCRIPTION] "Diag_Batt_FPDOV",32
+[VALUE_DESCRIPTION] "Diag_Batt_FPOV",33
+[VALUE_DESCRIPTION] "Diag_Batt_WUV",34
+[VALUE_DESCRIPTION] "Diag_Batt_FUV",35
+[VALUE_DESCRIPTION] "Diag_Batt_PFDUV",36
+[VALUE_DESCRIPTION] "Diag_Batt_PFUV",37
+[VALUE_DESCRIPTION] "Diag_Batt_WOT",38
+[VALUE_DESCRIPTION] "Diag_Batt_FOT",39
+[VALUE_DESCRIPTION] "Diag_Batt_PFDOT",40
+[VALUE_DESCRIPTION] "Diag_Batt_PFOT",41
+[VALUE_DESCRIPTION] "Diag_Batt_WUT",42
+[VALUE_DESCRIPTION] "Diag_Batt_FUT",43
+[VALUE_DESCRIPTION] "Diag_Batt_PFUT",44
+[VALUE_DESCRIPTION] "Diag_Batt_WOCC",45
+[VALUE_DESCRIPTION] "Diag_Batt_FOCC",46
+[VALUE_DESCRIPTION] "Diag_Batt_WOCD",47
+[VALUE_DESCRIPTION] "Diag_Batt_FOCD",48
+[VALUE_DESCRIPTION] "Diag_Batt_FSC",49
+[VALUE_DESCRIPTION] "Diag_Batt_WUSOH",50
+[VALUE_DESCRIPTION] "Diag_Batt_FUSOH",51
+[VALUE_DESCRIPTION] "Diag_Batt_WMSOH",52
+[VALUE_DESCRIPTION] "Diag_Batt_FMSOH",53
+[VALUE_DESCRIPTION] "Diag_Batt_WMSMT",54
+[VALUE_DESCRIPTION] "Diag_Batt_FMSMT",55
+[VALUE_DESCRIPTION] "Diag_Batt_WOTPCB",56
+[VALUE_DESCRIPTION] "Diag_Batt_FOTPCB",57
+[VALUE_DESCRIPTION] "Diag_Batt_WMATEMP",58
+[VALUE_DESCRIPTION] "Diag_Batt_FMATEMP",59
+[VALUE_DESCRIPTION] "Diag_Batt_PFDMATEMP",60
+[VALUE_DESCRIPTION] "Diag_Batt_PFCRASH",61
+[VALUE_DESCRIPTION] "Diag_Bal_WTBV",62
+[VALUE_DESCRIPTION] "Diag_Bal_FTBV",63
+[VALUE_DESCRIPTION] "Diag_Bal_FCBT",64
+[VALUE_DESCRIPTION] "Diag_Bal_WIOT",65
+[VALUE_DESCRIPTION] "Diag_Bal_FIOT",66
+[VALUE_DESCRIPTION] "Diag_Cont_SHS",67
+[VALUE_DESCRIPTION] "Diag_Cont_SLS",68
+[VALUE_DESCRIPTION] "Diag_Cont_NP",69
+[VALUE_DESCRIPTION] "Diag_Cont_ST",70
+[VALUE_DESCRIPTION] "Diag_PCC_SHS",71
+[VALUE_DESCRIPTION] "Diag_PCC_SLS",72
+[VALUE_DESCRIPTION] "Diag_PCC_NP",73
+[VALUE_DESCRIPTION] "Diag_PCC_ST",74
+[VALUE_DESCRIPTION] "Diag_HEAT_SHS",75
+[VALUE_DESCRIPTION] "Diag_HEAT_SLS",76
+[VALUE_DESCRIPTION] "Diag_HEAT_NP",77
+[VALUE_DESCRIPTION] "Diag_HEAT_ST",78
+[VALUE_DESCRIPTION] "Diag_PYR_SHS",79
+[VALUE_DESCRIPTION] "Diag_PYR_SLS",80
+[VALUE_DESCRIPTION] "Diag_PYR_NP",81
+[VALUE_DESCRIPTION] "Diag_Cont_WOT",82
+[VALUE_DESCRIPTION] "Diag_Cont_FOT",83
+[VALUE_DESCRIPTION] "Diag_PCC_WOT",84
+[VALUE_DESCRIPTION] "Diag_PCC_FOT",85
+[VALUE_DESCRIPTION] "Diag_BAL_ERR",86
+[VALUE_DESCRIPTION] "Diag_DATAINT_ERR",87
+[VALUE_DESCRIPTION] "Diag_Data_Acq_Err",88
+[VALUE_DESCRIPTION] "Diag_Conf_Acq_Err",89
+[VALUE_DESCRIPTION] "Diag_Conf_Sys_Err",90
+[VALUE_DESCRIPTION] "Diag_Conf_Eeprom_Err",91
+[VALUE_DESCRIPTION] "Diag_Comm_Spi_Err",92
+[VALUE_DESCRIPTION] "Diag_Comm_CAN_Err",93
+[VALUE_DESCRIPTION] "Diag_LVPWR1_ERR",94
+[VALUE_DESCRIPTION] "Diag_LVPWR2_ERR",95
+[VALUE_DESCRIPTION] "Diag_CPU_ERR",96
+[VALUE_DESCRIPTION] "Diag_CPU_PERR",97
+[VALUE_DESCRIPTION] "Diag_ALG_SOH",98
+[START_SIGNALS] Fault_Class,8,1,0,U,255,0,1,0,1,,,
+[VALUE_DESCRIPTION] "FC_None",0
+[VALUE_DESCRIPTION] "FC0",1
+[VALUE_DESCRIPTION] "FC1",2
+[VALUE_DESCRIPTION] "FC2",3
+[END_MSG]
+
+[START_MSG] Diagnostics_Mask_02,3,8,2,0,S,BMS_Master
+[START_SIGNALS] IncreaseFaultMask,32,5,0,U,4.29497e+09,0,1,0,1,,,
+[START_SIGNALS] PermanentFaultMask,32,1,0,U,4.29497e+09,0,1,0,1,,,
+[END_MSG]
+
+[START_MSG] Diagnostics_Mask_01,2,8,2,0,S,BMS_Master
+[START_SIGNALS] FaultMask,32,5,0,U,4.29497e+09,0,1,0,1,,,
+[START_SIGNALS] WarningMask,32,1,0,U,4.29497e+09,0,1,0,1,,,
+[END_MSG]
+
+[START_MSG] Battery_Crash_02,1282,8,3,0,S,BMS_Master
+[START_SIGNALS] Yaw,16,5,0,I,32767,-32768,1,0,1,,,
+[START_SIGNALS] Roll,16,3,0,I,32767,-32768,1,0,1,,,
+[START_SIGNALS] Pitch,16,1,0,I,32767,-32768,1,0,1,,,
+[END_MSG]
+
+[START_MSG] Battery_Crash_01,1281,8,3,0,S,BMS_Master
+[START_SIGNALS] Accel_Z,16,5,0,I,32767,-32768,1,0,1,,,
+[START_SIGNALS] Accel_Y,16,3,0,I,32767,-32768,1,0,1,,,
+[START_SIGNALS] Accel_X,16,1,0,I,32767,-32768,1,0,1,,,
+[END_MSG]
+
+[START_MSG] Battery_Pressure,1280,8,1,0,S,BMS_Master
+[START_SIGNALS] Pressure_Data,16,1,0,U,65535,0,1,0,1,,,
+[END_MSG]
+
+[START_MSG] Battery_SOH,517,8,1,0,S,BMS_Master
+[START_SIGNALS] SOH,8,1,0,U,100,0,1,0,1,,,
+[END_MSG]
+
+[START_MSG] Serial_Number,6,8,3,0,S,BMS_Master
+[START_SIGNALS] BMS_FW_Version,8,3,0,U,255,0,1,0,1,,,
+[START_SIGNALS] BMS_HW_Version,8,2,0,U,255,0,1,0,1,,,
+[START_SIGNALS] BMS_ID,8,1,0,U,255,0,1,0,1,,,
+[END_MSG]
+
+[START_MSG] BMS_State,1,8,4,0,S,BMS_Master
+[START_SIGNALS] InternalErrorMask,16,5,0,U,65535,0,1,0,1,,,
+[START_SIGNALS] FC_Level,8,2,0,U,255,0,1,0,1,,,
+[VALUE_DESCRIPTION] "FC_None",0
+[VALUE_DESCRIPTION] "FC0",1
+[VALUE_DESCRIPTION] "FC1",2
+[VALUE_DESCRIPTION] "FC2",3
+[START_SIGNALS] Peripheral_status,16,3,0,U,65535,0,1,0,1,,,
+[START_SIGNALS] BMS_State_Machine,8,1,0,U,255,0,1,0,1,,,
+[VALUE_DESCRIPTION] "Init state",0
+[VALUE_DESCRIPTION] "Config state",1
+[VALUE_DESCRIPTION] "Idle state",2
+[VALUE_DESCRIPTION] "Precharge state",3
+[VALUE_DESCRIPTION] "Predischarge state",4
+[VALUE_DESCRIPTION] "Charge state",5
+[VALUE_DESCRIPTION] "Discharge state",6
+[VALUE_DESCRIPTION] "Full Discharge state",7
+[VALUE_DESCRIPTION] "Error state",8
+[VALUE_DESCRIPTION] "Permanent Error state",9
+[END_MSG]
+
+[START_MSG] Cell_SoC_3,514,8,2,0,S,BMS_Master
+[START_SIGNALS] Cell_SoC_18,8,2,0,U,100,0,1,0,1,,,
+[START_SIGNALS] Cell_SoC_17,8,1,0,U,100,0,1,0,1,,,
+[END_MSG]
+
+[START_MSG] Cell_SoC_2,513,8,8,0,S,BMS_Master
+[START_SIGNALS] Cell_SoC_16,8,8,0,U,100,0,1,0,1,,,
+[START_SIGNALS] Cell_SoC_15,8,7,0,U,100,0,1,0,1,,,
+[START_SIGNALS] Cell_SoC_14,8,6,0,U,100,0,1,0,1,,,
+[START_SIGNALS] Cell_SoC_13,8,5,0,U,100,0,1,0,1,,,
+[START_SIGNALS] Cell_SoC_12,8,4,0,U,100,0,1,0,1,,,
+[START_SIGNALS] Cell_SoC_11,8,3,0,U,100,0,1,0,1,,,
+[START_SIGNALS] Cell_SoC_10,8,2,0,U,100,0,1,0,1,,,
+[START_SIGNALS] Cell_SoC_9,8,1,0,U,100,0,1,0,1,,,
+[END_MSG]
+
+[START_MSG] Cell_SoC_1,512,8,8,0,S,BMS_Master
+[START_SIGNALS] Cell_SoC_8,8,8,0,U,100,0,1,0,1,,,
+[START_SIGNALS] Cell_SoC_7,8,7,0,U,100,0,1,0,1,,,
+[START_SIGNALS] Cell_SoC_6,8,6,0,U,100,0,1,0,1,,,
+[START_SIGNALS] Cell_SoC_5,8,5,0,U,100,0,1,0,1,,,
+[START_SIGNALS] Cell_SoC_4,8,4,0,U,100,0,1,0,1,,,
+[START_SIGNALS] Cell_SoC_3,8,3,0,U,100,0,1,0,1,,,
+[START_SIGNALS] Cell_SoC_2,8,2,0,U,100,0,1,0,1,,,
+[START_SIGNALS] Cell_SoC_1,8,1,0,U,100,0,1,0,1,,,
+[END_MSG]
+
+[START_MSG] CCS_Temperatures,385,8,4,0,S,BMS_Master
+[START_SIGNALS] CCS_Temperature_4,8,4,0,I,60,-10,1,0,1,Celcius,,
+[START_SIGNALS] CCS_Temperature_3,8,3,0,I,60,-10,1,0,1,Celcius,,
+[START_SIGNALS] CCS_Temperature_2,8,2,0,I,60,-10,1,0,1,Celcius,,
+[START_SIGNALS] CCS_Temperature_1,8,1,0,I,60,-10,1,0,1,Celcius,,
+[END_MSG]
+
+[START_MSG] Box_Temperatures,384,8,6,0,S,BMS_Master
+[START_SIGNALS] Box_Temperature_6,8,6,0,I,85,-20,1,0,1,Celcius,,
+[START_SIGNALS] Box_Temperature_5,8,5,0,I,85,-20,1,0,1,Celcius,,
+[START_SIGNALS] Box_Temperature_4,8,4,0,I,85,-20,1,0,1,Celcius,,
+[START_SIGNALS] Box_Temperature_3,8,3,0,I,85,-20,1,0,1,Celcius,,
+[START_SIGNALS] Box_Temperature_2,8,2,0,I,85,-20,1,0,1,Celcius,,
+[START_SIGNALS] Box_Temperature_1,8,1,0,I,85,-20,1,0,1,Celcius,,
+[END_MSG]
+
+[START_MSG] Cell_Temperatures,368,8,6,0,S,BMS_Master
+[START_SIGNALS] Cell_Temperature_6,8,6,0,I,60,-10,1,0,1,Celcius,,
+[START_SIGNALS] Cell_Temperature_5,8,5,0,I,60,-10,1,0,1,Celcius,,
+[START_SIGNALS] Cell_Temperature_4,8,4,0,I,60,-10,1,0,1,Celcius,,
+[START_SIGNALS] Cell_Temperature_3,8,3,0,I,60,-10,1,0,1,Celcius,,
+[START_SIGNALS] Cell_Temperature_2,8,2,0,I,60,-10,1,0,1,Celcius,,
+[START_SIGNALS] Cell_Temperature_1,8,1,0,I,60,-10,1,0,1,Celcius,,
+[END_MSG]
+
+[START_MSG] Battery_Current,357,8,2,0,S,BMS_Master
+[START_SIGNALS] Current_Measurement,32,5,0,I,250000,-250000,1,0,1,mA,,
+[START_SIGNALS] Coulomb_Counting,32,1,0,U,4.29497e+09,0,1,0,1,s,,
+[END_MSG]
+
+[START_MSG] Battery_Voltage,336,8,1,0,S,BMS_Master
+[START_SIGNALS] Total_Voltage,32,1,0,U,650000,0,1,0,1,mV,,
+[END_MSG]
+
+[START_MSG] Cell_Voltages_05,261,8,2,0,S,BMS_Master
+[START_SIGNALS] Cell_Voltage_18,16,3,0,I,32767,-32768,1,0,1,mV,,
+[START_SIGNALS] Cell_Voltage_17,16,1,0,I,32767,-32768,1,0,1,mV,,
+[END_MSG]
+
+[START_MSG] Cell_Voltages_04,260,8,4,0,S,BMS_Master
+[START_SIGNALS] Cell_Voltage_16,16,7,0,I,32767,-32768,1,0,1,mV,,
+[START_SIGNALS] Cell_Voltage_15,16,5,0,I,32767,-32768,1,0,1,mV,,
+[START_SIGNALS] Cell_Voltage_14,16,3,0,I,32767,-32768,1,0,1,mV,,
+[START_SIGNALS] Cell_Voltage_13,16,1,0,I,32767,-32768,1,0,1,mV,,
+[END_MSG]
+
+[START_MSG] Cell_Voltages_03,259,8,4,0,S,BMS_Master
+[START_SIGNALS] Cell_Voltage_12,16,7,0,I,32767,-32768,1,0,1,mV,,
+[START_SIGNALS] Cell_Voltage_11,16,5,0,I,32767,-32768,1,0,1,mV,,
+[START_SIGNALS] Cell_Voltage_10,16,3,0,I,32767,-32768,1,0,1,mV,,
+[START_SIGNALS] Cell_Voltage_9,16,1,0,I,65535,0,1,0,1,mV,,
+[END_MSG]
+
+[START_MSG] Cell_Voltages_02,258,8,4,0,S,BMS_Master
+[START_SIGNALS] Cell_Voltage_8,16,7,0,I,32767,-32768,1,0,1,mV,,
+[START_SIGNALS] Cell_Voltage_7,16,5,0,I,32767,-32768,1,0,1,mV,,
+[START_SIGNALS] Cell_Voltage_6,16,3,0,I,32767,-32768,1,0,1,mV,,
+[START_SIGNALS] Cell_Voltage_5,16,1,0,I,32767,-32768,1,0,1,mV,,
+[END_MSG]
+
+[START_MSG] Cell_Voltages_01,257,8,4,0,S,BMS_Master
+[START_SIGNALS] Cell_Voltage_4,16,7,0,I,32767,-32768,1,0,1,mV,,
+[START_SIGNALS] Cell_Voltage_3,16,5,0,I,32767,-32768,1,0,1,mV,,
+[START_SIGNALS] Cell_Voltage_2,16,3,0,I,32767,-32768,1,0,1,mV,,
+[START_SIGNALS] Cell_Voltage_1,16,1,0,I,32767,-32768,1,0,1,mV,,
+[END_MSG]
+
+[NODE] Slave_node,BMS_Master
+[START_DESC]
+
+[START_DESC_MSG]
+0 S "This is a message for not used signals, created by Vector CANdb++ DBC OLE DB Provider.";
+1044 S "";
+1299 S "";
+1298 S "";
+1297 S "";
+1296 S "";
+1295 S "";
+1294 S "";
+1293 S "";
+1292 S "";
+1291 S "";
+1290 S "";
+1289 S "";
+1288 S "";
+1287 S "";
+1286 S "";
+1285 S "";
+16 S "";
+3 S "";
+2 S "";
+1282 S "";
+1281 S "";
+1280 S "";
+517 S "";
+6 S "";
+1 S "";
+514 S "";
+513 S "";
+512 S "";
+385 S "";
+384 S "";
+368 S "";
+357 S "";
+336 S "";
+261 S "";
+260 S "";
+259 S "";
+258 S "";
+257 S "";
+[END_DESC_MSG]
+[START_DESC_NODE]
+[END_DESC_NODE]
+[START_DESC_SIG]
+368 S Cell_Temperature_6 "772 Redundant Channel 2";
+368 S Cell_Temperature_5 "772 Redundant Channel 1 ";
+368 S Cell_Temperature_4 "774 Redundant Channel 4";
+368 S Cell_Temperature_3 "774 Redundant Channel 3 ";
+368 S Cell_Temperature_2 "774 Redundant Channel 2 ";
+368 S Cell_Temperature_1 "774 Redundant Channel 1";
+[END_DESC_SIG]
+[END_DESC]
+
+[START_PARAM]
+[START_PARAM_NET]
+"BusType",STRING,
+"DBName",STRING,
+"FOC_ATTR_VER_20140609",INT,0,0,0
+"FOC_BUS_TYPE",ENUM,,"CAN","CAN_AUTOSAR","I2C","LIN","MPDT","SCI","SPI","SENT",CAN
+"FOC_CHECK_FRAME_LEN",ENUM,,"FOC_SIG_LEN_CHECK","FOC_NO_CHECK","FOC_FRM_LEN_CHECK",FOC_SIG_LEN_CHECK
+"FOC_GEN_PREFIX",STRING,
+[END_PARAM_NET]
+[START_PARAM_NODE]
+"ECU",STRING,
+"FDC_CAN_HANDLER",STRING,
+"FDC_NUM_DYN_ID_RX_FRM",INT,0,0,0
+"FDC_PRE_TX_CALLBACK",STRING,
+"FDC_RX_CALLBACK",STRING,
+"FOC_APP_MODE",ENUM,,"FOC_NORMAL_MODE",FOC_NORMAL_MODE
+"FOC_NODE_ID",HEX,4096,61440,4096
+"FOC_SPEC_DOC",STRING,
+"FOC_STARTCOM_EXTENSION",ENUM,,"FALSE","TRUE",FALSE
+"FOC_STATUS",ENUM,,"FOC_STANDARD","FOC_EXTENDED",FOC_STANDARD
+"FONM_GLOBAL_TIME_OUT",INT,0,0,0
+"FONM_MODE",ENUM,,"NONE","INDIRECT","vector_leerstring",NONE
+"FSM_FAULT_CATEGORY",ENUM,,"FSM_FAULT_CAT_NOT_ASSIGNED","FSM_FAULT_CAT_A","FSM_FAULT_CAT_B","FSM_FAULT_CAT_C","FSM_FAULT_CAT_D","FSM_FAULT_CAT_SPECIFIC",FSM_FAULT_CAT_NOT_ASSIGNED
+"NmStationAddress",HEX,0,0,0
+[END_PARAM_NODE]
+[START_PARAM_MSG]
+"FDC_TYPE",ENUM,,"FDC_COM_FRM","FDC_COM_DYN_FRM","FDC_OTHER_FRM"
+"FOC_MIN_DELAY_BETWEEN_TX",INT,0,0
+"FOC_TX_MODE",ENUM,,"FOC_PERIODIC","FOC_DIRECT","FOC_MIXED"
+"FOC_TX_OFFSET",INT,0,0
+"FOC_TX_PERIOD",INT,0,0
+"FOC_TX_TIME_OUT",INT,0,0
+"FONM_DELTA_DEC",INT,0,0
+"FONM_DELTA_INC",INT,0,0
+"FONM_FRAME_TIME_OUT",INT,0,0
+"FONM_INDEX",INT,0,0
+"FONM_NODE_MONITORING",ENUM,,"NO","YES"
+"GenMsgCycleTime",INT,0,0
+"GenMsgSendType",ENUM,,"Cyclic","IfActive","NoMsgSendType","vector_leerstring"
+[END_PARAM_MSG]
+[START_PARAM_SIG]
+"GenSigStartValue",INT,0,255,0
+"GenSigSendType",ENUM,,"Cyclic","OnWrite","OnWriteWithRepetition","OnChange",Cyclic
+"GenSigInactiveValue",INT,0,0,0
+"FOC_SIG_RX_TIME_OUT",INT,0,0,0
+"FOC_SIG_RX_FIRST_TIME_OUT",INT,0,0,0
+"FOC_NOTIF_CALLBACK_TX_ERROR",STRING,
+"FOC_NOTIF_CALLBACK_TX",STRING,
+"FOC_NOTIF_CALLBACK_RX_ERROR",STRING,
+"FOC_NOTIF_CALLBACK_RX",STRING,
+"FOC_COD_DECOD_MODE",ENUM,,"FOC_AUTO","FOC_MANUAL",FOC_AUTO
+"FOC_INITIAL_VALUE",HEX,0,0,0
+"FOC_LENGTH_MODE",ENUM,,"FOC_STATIC","FOC_DYNAMIC","FOC_ZERO_LENGTH","vector_leerstring",FOC_STATIC
+"FOC_TRANSFER_MODE",ENUM,,"FOC_TRIGGERED","FOC_PENDING","vector_leerstring",FOC_PENDING
+"FOC_NOTIF_TYPE_RX",ENUM,,"FOC_NONE","FOC_FLAG","FOC_CALLBACK",FOC_NONE
+"FOC_NOTIF_TYPE_RX_ERROR",ENUM,,"FOC_NONE","FOC_FLAG","FOC_CALLBACK",FOC_NONE
+"FOC_NOTIF_TYPE_TX",ENUM,,"FOC_NONE","FOC_FLAG","FOC_CALLBACK",FOC_NONE
+"FOC_NOTIF_TYPE_TX_ERROR",ENUM,,"FOC_NONE","FOC_FLAG","FOC_CALLBACK",FOC_NONE
+[END_PARAM_SIG]
+[START_PARAM_VAL]
+[START_PARAM_NODE_VAL]
+[END_PARAM_NODE_VAL]
+[START_PARAM_MSG_VAL]
+1044,S,"FOC_TX_MODE","1"
+1044,S,"GenMsgSendType","1"
+1299,S,"FOC_TX_MODE","1"
+1299,S,"GenMsgSendType","1"
+1298,S,"FOC_TX_MODE","1"
+1298,S,"GenMsgSendType","1"
+1297,S,"FOC_TX_MODE","1"
+1297,S,"GenMsgSendType","1"
+1296,S,"FOC_TX_MODE","1"
+1296,S,"GenMsgSendType","1"
+1295,S,"FOC_TX_MODE","1"
+1295,S,"GenMsgSendType","1"
+1294,S,"FOC_TX_MODE","1"
+1294,S,"GenMsgSendType","1"
+1293,S,"FOC_TX_MODE","1"
+1293,S,"GenMsgSendType","1"
+1292,S,"FOC_TX_MODE","1"
+1292,S,"GenMsgSendType","1"
+1291,S,"FOC_TX_MODE","1"
+1291,S,"GenMsgSendType","1"
+1290,S,"FOC_TX_MODE","1"
+1290,S,"GenMsgSendType","1"
+1289,S,"FOC_TX_MODE","1"
+1289,S,"GenMsgSendType","1"
+1288,S,"FOC_TX_MODE","1"
+1288,S,"GenMsgSendType","1"
+1287,S,"FOC_TX_MODE","1"
+1287,S,"GenMsgSendType","1"
+1286,S,"FOC_TX_MODE","1"
+1286,S,"GenMsgSendType","1"
+1285,S,"FOC_TX_MODE","1"
+1285,S,"GenMsgSendType","1"
+16,S,"FOC_TX_MODE","1"
+16,S,"GenMsgSendType","1"
+3,S,"FOC_TX_MODE","1"
+3,S,"GenMsgSendType","1"
+2,S,"FOC_TX_MODE","1"
+2,S,"GenMsgSendType","1"
+1282,S,"FOC_TX_MODE","1"
+1282,S,"FOC_TX_PERIOD","3000"
+1282,S,"GenMsgSendType","1"
+1281,S,"FOC_TX_MODE","1"
+1281,S,"FOC_TX_PERIOD","3000"
+1281,S,"GenMsgSendType","1"
+1280,S,"FOC_TX_MODE","1"
+1280,S,"FOC_TX_PERIOD","3000"
+1280,S,"GenMsgSendType","1"
+517,S,"FOC_TX_MODE","1"
+517,S,"FOC_TX_PERIOD","3000"
+517,S,"GenMsgSendType","1"
+6,S,"FOC_TX_MODE","1"
+6,S,"GenMsgSendType","1"
+1,S,"FOC_TX_MODE","1"
+1,S,"FOC_TX_PERIOD","3000"
+1,S,"GenMsgSendType","1"
+514,S,"FOC_TX_MODE","1"
+514,S,"GenMsgSendType","1"
+513,S,"FOC_TX_MODE","1"
+513,S,"GenMsgSendType","1"
+512,S,"FOC_TX_MODE","1"
+512,S,"GenMsgSendType","1"
+385,S,"FOC_TX_MODE","1"
+385,S,"GenMsgSendType","1"
+384,S,"FOC_TX_MODE","1"
+384,S,"GenMsgSendType","1"
+368,S,"FOC_TX_MODE","1"
+368,S,"GenMsgSendType","1"
+357,S,"FOC_TX_MODE","1"
+357,S,"FOC_TX_PERIOD","3000"
+357,S,"GenMsgSendType","1"
+336,S,"FOC_TX_MODE","1"
+336,S,"FOC_TX_PERIOD","3000"
+336,S,"GenMsgSendType","1"
+261,S,"FOC_TX_MODE","1"
+261,S,"GenMsgSendType","1"
+260,S,"FOC_TX_MODE","1"
+260,S,"GenMsgSendType","1"
+259,S,"FOC_TX_MODE","1"
+259,S,"GenMsgSendType","1"
+258,S,"FOC_TX_MODE","1"
+258,S,"GenMsgSendType","1"
+257,S,"FOC_TX_MODE","1"
+257,S,"GenMsgSendType","1"
+[END_PARAM_MSG_VAL]
+[START_PARAM_SIG_VAL]
+1044,S,IC774_Sec_Temperature,"GenSigSendType","1"
+1044,S,IC774_Prim_Temperature,"GenSigSendType","1"
+1044,S,IC772_Temperature,"GenSigSendType","1"
+1044,S,Balancing_Temperature,"GenSigSendType","1"
+1044,S,PCB_Temperature,"GenSigSendType","1"
+1299,S,MaskCell_PFMSMT,"GenSigSendType","1"
+1299,S,MaskCell_PFOMSMT,"GenSigSendType","1"
+1298,S,MaskCell_FMSMT,"GenSigSendType","1"
+1298,S,MaskCell_WMSMT,"GenSigSendType","1"
+1297,S,MaskCell_FOCL,"GenSigSendType","1"
+1297,S,MaskCell_WOCL,"GenSigSendType","1"
+1296,S,MaskCell_PFUSOC,"GenSigSendType","1"
+1296,S,MaskCell_PFDUSOC,"GenSigSendType","1"
+1295,S,MaskCell_FUSOC,"GenSigSendType","1"
+1295,S,MaskCell_WUSOC,"GenSigSendType","1"
+1294,S,MaskCell_PFOSOC,"GenSigSendType","1"
+1294,S,MaskCell_PFDOSOC,"GenSigSendType","1"
+1293,S,MaskCell_POSOC,"GenSigSendType","1"
+1293,S,MaskCell_WOSOC,"GenSigSendType","1"
+1292,S,MaskCell_PFUT,"GenSigSendType","1"
+1292,S,MaskCell_PFDUT,"GenSigSendType","1"
+1291,S,MaskCell_FUT,"GenSigSendType","1"
+1291,S,MaskCell_WUT,"GenSigSendType","1"
+1290,S,MaskCell_PFOT,"GenSigSendType","1"
+1290,S,MaskCell_PFDOT,"GenSigSendType","1"
+1289,S,MaskCell_FOT,"GenSigSendType","1"
+1289,S,MaskCell_WOT,"GenSigSendType","1"
+1288,S,MaskCell_PFUV,"GenSigSendType","1"
+1288,S,MaskCell_PFDUV,"GenSigSendType","1"
+1287,S,MaskCell_FUV,"GenSigSendType","1"
+1287,S,MaskCell_WUV,"GenSigSendType","1"
+1286,S,MaskCell_PFOV,"GenSigSendType","1"
+1286,S,MaskCell_PFDOV,"GenSigSendType","1"
+1285,S,MaskCell_FOV,"GenSigSendType","1"
+1285,S,MaskCell_WOV,"GenSigSendType","1"
+16,S,Not_Cell_NTC,"GenSigSendType","1"
+16,S,NTC_Num,"GenSigSendType","1"
+16,S,Cell_Num,"GenSigSendType","1"
+16,S,Sel_Cells_NTC,"GenSigSendType","1"
+16,S,Timestamp,"GenSigSendType","1"
+16,S,Diag_Code,"GenSigSendType","1"
+16,S,Fault_Class,"GenSigSendType","1"
+3,S,IncreaseFaultMask,"GenSigSendType","1"
+3,S,PermanentFaultMask,"GenSigSendType","1"
+2,S,FaultMask,"GenSigSendType","1"
+2,S,WarningMask,"GenSigSendType","1"
+1282,S,Yaw,"GenSigSendType","1"
+1282,S,Roll,"GenSigSendType","1"
+1282,S,Pitch,"GenSigSendType","1"
+1281,S,Accel_Z,"GenSigSendType","1"
+1281,S,Accel_Y,"GenSigSendType","1"
+1281,S,Accel_X,"GenSigSendType","1"
+1280,S,Pressure_Data,"GenSigSendType","1"
+517,S,SOH,"GenSigSendType","1"
+6,S,BMS_FW_Version,"GenSigSendType","1"
+6,S,BMS_HW_Version,"GenSigSendType","1"
+6,S,BMS_ID,"GenSigSendType","1"
+1,S,InternalErrorMask,"GenSigSendType","1"
+1,S,FC_Level,"GenSigSendType","1"
+1,S,Peripheral_status,"GenSigSendType","1"
+1,S,BMS_State_Machine,"GenSigSendType","1"
+514,S,Cell_SoC_18,"GenSigSendType","1"
+514,S,Cell_SoC_17,"GenSigSendType","1"
+513,S,Cell_SoC_16,"GenSigSendType","1"
+513,S,Cell_SoC_15,"GenSigSendType","1"
+513,S,Cell_SoC_14,"GenSigSendType","1"
+513,S,Cell_SoC_13,"GenSigSendType","1"
+513,S,Cell_SoC_12,"GenSigSendType","1"
+513,S,Cell_SoC_11,"GenSigSendType","1"
+513,S,Cell_SoC_10,"GenSigSendType","1"
+513,S,Cell_SoC_9,"GenSigSendType","1"
+512,S,Cell_SoC_8,"GenSigSendType","1"
+512,S,Cell_SoC_7,"GenSigSendType","1"
+512,S,Cell_SoC_6,"GenSigSendType","1"
+512,S,Cell_SoC_5,"GenSigSendType","1"
+512,S,Cell_SoC_4,"GenSigSendType","1"
+512,S,Cell_SoC_3,"GenSigSendType","1"
+512,S,Cell_SoC_2,"GenSigSendType","1"
+512,S,Cell_SoC_1,"GenSigSendType","1"
+385,S,CCS_Temperature_4,"GenSigSendType","1"
+385,S,CCS_Temperature_3,"GenSigSendType","1"
+385,S,CCS_Temperature_2,"GenSigSendType","1"
+385,S,CCS_Temperature_1,"GenSigSendType","1"
+384,S,Box_Temperature_6,"GenSigSendType","1"
+384,S,Box_Temperature_5,"GenSigSendType","1"
+384,S,Box_Temperature_4,"GenSigSendType","1"
+384,S,Box_Temperature_3,"GenSigSendType","1"
+384,S,Box_Temperature_2,"GenSigSendType","1"
+384,S,Box_Temperature_1,"GenSigSendType","1"
+368,S,Cell_Temperature_6,"GenSigSendType","1"
+368,S,Cell_Temperature_5,"GenSigSendType","1"
+368,S,Cell_Temperature_4,"GenSigSendType","1"
+368,S,Cell_Temperature_3,"GenSigSendType","1"
+368,S,Cell_Temperature_2,"GenSigSendType","1"
+368,S,Cell_Temperature_1,"GenSigSendType","1"
+357,S,Current_Measurement,"GenSigSendType","1"
+357,S,Coulomb_Counting,"GenSigSendType","1"
+336,S,Total_Voltage,"GenSigSendType","1"
+261,S,Cell_Voltage_18,"GenSigSendType","1"
+261,S,Cell_Voltage_17,"GenSigSendType","1"
+260,S,Cell_Voltage_16,"GenSigSendType","1"
+260,S,Cell_Voltage_15,"GenSigSendType","1"
+260,S,Cell_Voltage_14,"GenSigSendType","1"
+260,S,Cell_Voltage_13,"GenSigSendType","1"
+259,S,Cell_Voltage_12,"GenSigSendType","1"
+259,S,Cell_Voltage_11,"GenSigSendType","1"
+259,S,Cell_Voltage_10,"GenSigSendType","1"
+259,S,Cell_Voltage_9,"GenSigSendType","1"
+258,S,Cell_Voltage_8,"GenSigSendType","1"
+258,S,Cell_Voltage_7,"GenSigSendType","1"
+258,S,Cell_Voltage_6,"GenSigSendType","1"
+258,S,Cell_Voltage_5,"GenSigSendType","1"
+257,S,Cell_Voltage_4,"GenSigSendType","1"
+257,S,Cell_Voltage_3,"GenSigSendType","1"
+257,S,Cell_Voltage_2,"GenSigSendType","1"
+257,S,Cell_Voltage_1,"GenSigSendType","1"
+[END_PARAM_SIG_VAL]
+[END_PARAM_VAL]

@@ -1,0 +1,556 @@
+VERSION ""
+
+
+NS_ : 
+	NS_DESC_
+	CM_
+	BA_DEF_
+	BA_
+	VAL_
+	CAT_DEF_
+	CAT_
+	FILTER
+	BA_DEF_DEF_
+	EV_DATA_
+	ENVVAR_DATA_
+	SGTYPE_
+	SGTYPE_VAL_
+	BA_DEF_SGTYPE_
+	BA_SGTYPE_
+	SIG_TYPE_REF_
+	VAL_TABLE_
+	SIG_GROUP_
+	SIG_VALTYPE_
+	SIGTYPE_VALTYPE_
+	BO_TX_BU_
+	BA_DEF_REL_
+	BA_REL_
+	BA_DEF_DEF_REL_
+	BU_SG_REL_
+	BU_EV_REL_
+	BU_BO_REL_
+	SG_MUL_VAL_
+
+BS_:
+
+BU_: Slave_node BMS_Master
+VAL_TABLE_ Diagnostic_Code 98 "Diag_ALG_SOH" 97 "Diag_CPU_PERR" 96 "Diag_CPU_ERR" 95 "Diag_LVPWR2_ERR" 94 "Diag_LVPWR1_ERR" 93 "Diag_Comm_CAN_Err" 92 "Diag_Comm_Spi_Err" 91 "Diag_Conf_Eeprom_Err" 90 "Diag_Conf_Sys_Err" 89 "Diag_Conf_Acq_Err" 88 "Diag_Data_Acq_Err" 87 "Diag_DATAINT_ERR" 86 "Diag_BAL_ERR" 85 "Diag_PCC_FOT" 84 "Diag_PCC_WOT" 83 "Diag_Cont_FOT" 82 "Diag_Cont_WOT" 81 "Diag_PYR_NP" 80 "Diag_PYR_SLS" 79 "Diag_PYR_SHS" 78 "Diag_HEAT_ST" 77 "Diag_HEAT_NP" 76 "Diag_HEAT_SLS" 75 "Diag_HEAT_SHS" 74 "Diag_PCC_ST" 73 "Diag_PCC_NP" 72 "Diag_PCC_SLS" 71 "Diag_PCC_SHS" 70 "Diag_Cont_ST" 69 "Diag_Cont_NP" 68 "Diag_Cont_SLS" 67 "Diag_Cont_SHS" 66 "Diag_Bal_FIOT" 65 "Diag_Bal_WIOT" 64 "Diag_Bal_FCBT" 63 "Diag_Bal_FTBV" 62 "Diag_Bal_WTBV" 61 "Diag_Batt_PFCRASH" 60 "Diag_Batt_PFDMATEMP" 59 "Diag_Batt_FMATEMP" 58 "Diag_Batt_WMATEMP" 57 "Diag_Batt_FOTPCB" 56 "Diag_Batt_WOTPCB" 55 "Diag_Batt_FMSMT" 54 "Diag_Batt_WMSMT" 53 "Diag_Batt_FMSOH" 52 "Diag_Batt_WMSOH" 51 "Diag_Batt_FUSOH" 50 "Diag_Batt_WUSOH" 49 "Diag_Batt_FSC" 48 "Diag_Batt_FOCD" 47 "Diag_Batt_WOCD" 46 "Diag_Batt_FOCC" 45 "Diag_Batt_WOCC" 44 "Diag_Batt_PFUT" 43 "Diag_Batt_FUT" 42 "Diag_Batt_WUT" 41 "Diag_Batt_PFOT" 40 "Diag_Batt_PFDOT" 39 "Diag_Batt_FOT" 38 "Diag_Batt_WOT" 37 "Diag_Batt_PFUV" 36 "Diag_Batt_PFDUV" 35 "Diag_Batt_FUV" 34 "Diag_Batt_WUV" 33 "Diag_Batt_FPOV" 32 "Diag_Batt_FPDOV" 31 "Diag_Batt_FOV" 30 "Diag_Batt_WOV" 29 "Diag_Batt_FACCVM" 28 "Diag_Batt_WACCVM" 27 "Diag_Batt_PFICV" 26 "Diag_Batt_FICV" 25 "Diag_Batt_WICV" 24 "Diag_Cell_FRIR" 23 "Diag_Cell_WRIR" 22 "Diag_Cell_FOCV" 21 "Diag_Cell_PFUSOC" 20 "Diag_Cell_FUSOC" 19 "Diag_Cell_WUSOC" 18 "Diag_Cell_PFSOC" 17 "Diag_Cell_FOSOC" 16 "Diag_Cell_WOSOC" 15 "Diag_Cell_PFUT" 14 "Diag_Cell_FUT" 13 "Diag_Cell_WUT" 12 "Diag_Cell_PFOT" 11 "Diag_Cell_PFDOT" 10 "Diag_Cell_FOT" 9 "Diag_Cell_WOT" 8 "Diag_Cell_PFUV" 7 "Diag_Cell_PFDUV" 6 "Diag_Cell_FUV" 5 "Diag_Cell_WUV" 4 "Diag_Cell_PFOV" 3 "Diag_Cell_PFDOV" 2 "Diag_Cell_FOV" 1 "Diag_Cell_WOV" 0 "Not Specified" ;
+VAL_TABLE_ Fault_Class_Enum 3 "FC_2" 2 "FC1" 1 "FC0" 0 "FC_None" ;
+VAL_TABLE_ BMS_FCLevel 3 "Permanent Fault" 2 "Fault" 1 "Warning" 0 "No Error" ;
+VAL_TABLE_ BMS_State 9 "Permanent Error state" 8 "Error state" 7 "Full Discharge state" 6 "Discharge state" 5 "Charge state" 4 "Pre-discharge state" 3 "Pre-charge state" 2 "Idle state" 1 "Config state" 0 "Init state" ;
+
+
+BO_ 3221225472 VECTOR__INDEPENDENT_SIG_MSG: 0 Vector__XXX
+ SG_ Required_Action : 0|8@1+ (1,0) [0|255] "" Vector__XXX
+ SG_ Peripherals_Status : 0|16@1+ (1,0) [0|65535] "" Vector__XXX
+ SG_ Crash_Detection : 0|1@1+ (1,0) [0|1] "" Vector__XXX
+
+BO_ 1044 Board_Temperatures: 8 BMS_Master
+ SG_ IC774_Sec_Temperature : 24|8@1- (1,0) [-128|127] "Celsius" Vector__XXX
+ SG_ IC774_Prim_Temperature : 32|8@1- (1,0) [-32768|32767] "Celsius" Vector__XXX
+ SG_ IC772_Temperature : 16|8@1- (1,0) [-128|127] "Celsius" Vector__XXX
+ SG_ Balancing_Temperature : 8|8@1- (1,0) [-128|127] "Celsius" Vector__XXX
+ SG_ PCB_Temperature : 0|8@1- (1,0) [-128|127] "Celsius" Vector__XXX
+
+BO_ 1299 MaskCell_MSMT_02: 8 BMS_Master
+ SG_ MaskCell_PFMSMT : 32|32@1+ (1,0) [0|4294967295] "" Vector__XXX
+ SG_ MaskCell_PFOMSMT : 0|32@1+ (1,0) [0|4294967295] "" Vector__XXX
+
+BO_ 1298 MaskCell_MSMT_01: 8 BMS_Master
+ SG_ MaskCell_FMSMT : 32|32@1+ (1,0) [0|4294967295] "" Vector__XXX
+ SG_ MaskCell_WMSMT : 0|32@1+ (1,0) [0|4294967295] "" Vector__XXX
+
+BO_ 1297 MaskCell_OCL: 8 BMS_Master
+ SG_ MaskCell_FOCL : 32|32@1+ (1,0) [0|4294967295] "" Vector__XXX
+ SG_ MaskCell_WOCL : 0|32@1+ (1,0) [0|4294967295] "" Vector__XXX
+
+BO_ 1296 MaskCell_USOC_02: 8 BMS_Master
+ SG_ MaskCell_PFUSOC : 32|32@1+ (1,0) [0|4294967295] "" Vector__XXX
+ SG_ MaskCell_PFDUSOC : 0|32@1+ (1,0) [0|4294967295] "" Vector__XXX
+
+BO_ 1295 MaskCell_USOC_01: 8 BMS_Master
+ SG_ MaskCell_FUSOC : 32|32@1+ (1,0) [0|4294967295] "" Vector__XXX
+ SG_ MaskCell_WUSOC : 0|32@1+ (1,0) [0|4294967295] "" Vector__XXX
+
+BO_ 1294 MaskCell_OSOC_02: 8 BMS_Master
+ SG_ MaskCell_PFOSOC : 32|32@1+ (1,0) [0|4294967295] "" Vector__XXX
+ SG_ MaskCell_PFDOSOC : 0|32@1+ (1,0) [0|4294967295] "" Vector__XXX
+
+BO_ 1293 MaskCell_OSOC_01: 8 BMS_Master
+ SG_ MaskCell_POSOC : 32|32@1+ (1,0) [0|4294967295] "" Vector__XXX
+ SG_ MaskCell_WOSOC : 0|32@1+ (1,0) [0|4294967295] "" Vector__XXX
+
+BO_ 1292 MaskCell_UT_02: 8 BMS_Master
+ SG_ MaskCell_PFUT : 32|32@1+ (1,0) [0|4294967295] "" Vector__XXX
+ SG_ MaskCell_PFDUT : 0|32@1+ (1,0) [0|4294967295] "" Vector__XXX
+
+BO_ 1291 MaskCell_UT_01: 8 BMS_Master
+ SG_ MaskCell_FUT : 32|32@1+ (1,0) [0|4294967295] "" Vector__XXX
+ SG_ MaskCell_WUT : 0|32@1+ (1,0) [0|4294967295] "" Vector__XXX
+
+BO_ 1290 MaskCell_OT_02: 8 BMS_Master
+ SG_ MaskCell_PFOT : 32|32@1+ (1,0) [0|4294967295] "" Vector__XXX
+ SG_ MaskCell_PFDOT : 0|32@1+ (1,0) [0|4294967295] "" Vector__XXX
+
+BO_ 1289 MaskCell_OT_01: 8 BMS_Master
+ SG_ MaskCell_FOT : 32|32@1+ (1,0) [0|4294967295] "" Vector__XXX
+ SG_ MaskCell_WOT : 0|32@1+ (1,0) [0|4294967295] "" Vector__XXX
+
+BO_ 1288 MaskCell_UV_02: 8 BMS_Master
+ SG_ MaskCell_PFUV : 32|32@1+ (1,0) [0|4294967295] "" Vector__XXX
+ SG_ MaskCell_PFDUV : 0|32@1+ (1,0) [0|4294967295] "" Vector__XXX
+
+BO_ 1287 MaskCell_UV_01: 8 BMS_Master
+ SG_ MaskCell_FUV : 32|32@1+ (1,0) [0|4294967295] "" Vector__XXX
+ SG_ MaskCell_WUV : 0|32@1+ (1,0) [0|4294967295] "" Vector__XXX
+
+BO_ 1286 MaskCell_OV_02: 8 BMS_Master
+ SG_ MaskCell_PFOV : 32|32@1+ (1,0) [0|4294967295] "" Vector__XXX
+ SG_ MaskCell_PFDOV : 0|32@1+ (1,0) [0|4294967295] "" Vector__XXX
+
+BO_ 1285 MaskCell_OV_01: 8 BMS_Master
+ SG_ MaskCell_FOV : 32|32@1+ (1,0) [0|4294967295] "" Vector__XXX
+ SG_ MaskCell_WOV : 0|32@1+ (1,0) [0|4294967295] "" Vector__XXX
+
+BO_ 16 Diagnostic_Message: 8 BMS_Master
+ SG_ Not_Cell_NTC m0 : 56|8@1+ (1,0) [0|255] "" Vector__XXX
+ SG_ NTC_Num m2 : 56|8@1+ (1,0) [0|255] "" Vector__XXX
+ SG_ Cell_Num m1 : 56|8@1+ (1,0) [0|255] "" Vector__XXX
+ SG_ Sel_Cells_NTC M : 48|8@1+ (1,0) [0|255] "" Vector__XXX
+ SG_ Timestamp : 16|32@1+ (1,0) [0|4294967295] "" Vector__XXX
+ SG_ Diag_Code : 8|8@1+ (1,0) [0|255] "" Vector__XXX
+ SG_ Fault_Class : 0|8@1+ (1,0) [0|255] "" Vector__XXX
+
+BO_ 3 Diagnostics_Mask_02: 8 BMS_Master
+ SG_ IncreaseFaultMask : 32|32@1+ (1,0) [0|4294967295] "" Vector__XXX
+ SG_ PermanentFaultMask : 0|32@1+ (1,0) [0|4294967295] "" Vector__XXX
+
+BO_ 2 Diagnostics_Mask_01: 8 BMS_Master
+ SG_ FaultMask : 32|32@1+ (1,0) [0|4294967295] "" Vector__XXX
+ SG_ WarningMask : 0|32@1+ (1,0) [0|4294967295] "" Vector__XXX
+
+BO_ 1282 Battery_Crash_02: 8 BMS_Master
+ SG_ Yaw : 32|16@1- (1,0) [-32768|32767] "" Vector__XXX
+ SG_ Roll : 16|16@1- (1,0) [-32768|32767] "" Vector__XXX
+ SG_ Pitch : 0|16@1- (1,0) [-32768|32767] "" Vector__XXX
+
+BO_ 1281 Battery_Crash_01: 8 BMS_Master
+ SG_ Accel_Z : 32|16@1- (1,0) [-32768|32767] "" Vector__XXX
+ SG_ Accel_Y : 16|16@1- (1,0) [-32768|32767] "" Vector__XXX
+ SG_ Accel_X : 0|16@1- (1,0) [-32768|32767] "" Vector__XXX
+
+BO_ 1280 Battery_Pressure: 8 BMS_Master
+ SG_ Pressure_Data : 0|16@1+ (1,0) [0|65535] "" Vector__XXX
+
+BO_ 517 Battery_SOH: 8 BMS_Master
+ SG_ SOH : 0|8@1+ (1,0) [0|100] "" Vector__XXX
+
+BO_ 6 Serial_Number: 8 BMS_Master
+ SG_ BMS_FW_Version : 16|8@1+ (1,0) [0|255] "" Vector__XXX
+ SG_ BMS_HW_Version : 8|8@1+ (1,0) [0|255] "" Vector__XXX
+ SG_ BMS_ID : 0|8@1+ (1,0) [0|255] "" Vector__XXX
+
+BO_ 1 BMS_State: 8 BMS_Master
+ SG_ InternalErrorMask : 32|16@1+ (1,0) [0|65535] "" Vector__XXX
+ SG_ FC_Level : 8|8@1+ (1,0) [0|255] "" Vector__XXX
+ SG_ Peripheral_status : 16|16@1+ (1,0) [0|65535] "" Vector__XXX
+ SG_ BMS_State_Machine : 0|8@1+ (1,0) [0|255] "" Vector__XXX
+
+BO_ 514 Cell_SoC_3: 8 BMS_Master
+ SG_ Cell_SoC_18 : 8|8@1+ (1,0) [0|100] "" Vector__XXX
+ SG_ Cell_SoC_17 : 0|8@1+ (1,0) [0|100] "" Vector__XXX
+
+BO_ 513 Cell_SoC_2: 8 BMS_Master
+ SG_ Cell_SoC_16 : 56|8@1+ (1,0) [0|100] "" Vector__XXX
+ SG_ Cell_SoC_15 : 48|8@1+ (1,0) [0|100] "" Vector__XXX
+ SG_ Cell_SoC_14 : 40|8@1+ (1,0) [0|100] "" Vector__XXX
+ SG_ Cell_SoC_13 : 32|8@1+ (1,0) [0|100] "" Vector__XXX
+ SG_ Cell_SoC_12 : 24|8@1+ (1,0) [0|100] "" Vector__XXX
+ SG_ Cell_SoC_11 : 16|8@1+ (1,0) [0|100] "" Vector__XXX
+ SG_ Cell_SoC_10 : 8|8@1+ (1,0) [0|100] "" Vector__XXX
+ SG_ Cell_SoC_9 : 0|8@1+ (1,0) [0|100] "" Vector__XXX
+
+BO_ 512 Cell_SoC_1: 8 BMS_Master
+ SG_ Cell_SoC_8 : 56|8@1+ (1,0) [0|100] "" Vector__XXX
+ SG_ Cell_SoC_7 : 48|8@1+ (1,0) [0|100] "" Vector__XXX
+ SG_ Cell_SoC_6 : 40|8@1+ (1,0) [0|100] "" Vector__XXX
+ SG_ Cell_SoC_5 : 32|8@1+ (1,0) [0|100] "" Vector__XXX
+ SG_ Cell_SoC_4 : 24|8@1+ (1,0) [0|100] "" Vector__XXX
+ SG_ Cell_SoC_3 : 16|8@1+ (1,0) [0|100] "" Vector__XXX
+ SG_ Cell_SoC_2 : 8|8@1+ (1,0) [0|100] "" Vector__XXX
+ SG_ Cell_SoC_1 : 0|8@1+ (1,0) [0|100] "" Vector__XXX
+
+BO_ 385 CCS_Temperatures: 8 BMS_Master
+ SG_ CCS_Temperature_4 : 24|8@1- (1,0) [-10|60] "Celcius" Vector__XXX
+ SG_ CCS_Temperature_3 : 16|8@1- (1,0) [-10|60] "Celcius" Vector__XXX
+ SG_ CCS_Temperature_2 : 8|8@1- (1,0) [-10|60] "Celcius" Vector__XXX
+ SG_ CCS_Temperature_1 : 0|8@1- (1,0) [-10|60] "Celcius" Vector__XXX
+
+BO_ 384 Box_Temperatures: 8 BMS_Master
+ SG_ Box_Temperature_6 : 40|8@1- (1,0) [-20|85] "Celcius" Vector__XXX
+ SG_ Box_Temperature_5 : 32|8@1- (1,0) [-20|85] "Celcius" Vector__XXX
+ SG_ Box_Temperature_4 : 24|8@1- (1,0) [-20|85] "Celcius" Vector__XXX
+ SG_ Box_Temperature_3 : 16|8@1- (1,0) [-20|85] "Celcius" Vector__XXX
+ SG_ Box_Temperature_2 : 8|8@1- (1,0) [-20|85] "Celcius" Vector__XXX
+ SG_ Box_Temperature_1 : 0|8@1- (1,0) [-20|85] "Celcius" Vector__XXX
+
+BO_ 368 Cell_Temperatures: 8 BMS_Master
+ SG_ Cell_Temperature_6 : 40|8@1- (1,0) [-10|60] "Celcius" Vector__XXX
+ SG_ Cell_Temperature_5 : 32|8@1- (1,0) [-10|60] "Celcius" Vector__XXX
+ SG_ Cell_Temperature_4 : 24|8@1- (1,0) [-10|60] "Celcius" Vector__XXX
+ SG_ Cell_Temperature_3 : 16|8@1- (1,0) [-10|60] "Celcius" Vector__XXX
+ SG_ Cell_Temperature_2 : 8|8@1- (1,0) [-10|60] "Celcius" Vector__XXX
+ SG_ Cell_Temperature_1 : 0|8@1- (1,0) [-10|60] "Celcius" Vector__XXX
+
+BO_ 357 Battery_Current: 8 BMS_Master
+ SG_ Current_Measurement : 32|32@1- (1,0) [-250000|250000] "mA" Vector__XXX
+ SG_ Coulomb_Counting : 0|32@1+ (1,0) [0|4294967295] "s" Vector__XXX
+
+BO_ 336 Battery_Voltage: 8 BMS_Master
+ SG_ Total_Voltage : 0|32@1+ (1,0) [0|650000] "mV" Vector__XXX
+
+BO_ 261 Cell_Voltages_05: 8 BMS_Master
+ SG_ Cell_Voltage_18 : 16|16@1- (1,0) [-32768|32767] "mV" Vector__XXX
+ SG_ Cell_Voltage_17 : 0|16@1- (1,0) [-32768|32767] "mV" Vector__XXX
+
+BO_ 260 Cell_Voltages_04: 8 BMS_Master
+ SG_ Cell_Voltage_16 : 48|16@1- (1,0) [-32768|32767] "mV" Vector__XXX
+ SG_ Cell_Voltage_15 : 32|16@1- (1,0) [-32768|32767] "mV" Vector__XXX
+ SG_ Cell_Voltage_14 : 16|16@1- (1,0) [-32768|32767] "mV" Vector__XXX
+ SG_ Cell_Voltage_13 : 0|16@1- (1,0) [-32768|32767] "mV" Vector__XXX
+
+BO_ 259 Cell_Voltages_03: 8 BMS_Master
+ SG_ Cell_Voltage_12 : 48|16@1- (1,0) [-32768|32767] "mV" Vector__XXX
+ SG_ Cell_Voltage_11 : 32|16@1- (1,0) [-32768|32767] "mV" Vector__XXX
+ SG_ Cell_Voltage_10 : 16|16@1- (1,0) [-32768|32767] "mV" Vector__XXX
+ SG_ Cell_Voltage_9 : 0|16@1- (1,0) [0|65535] "mV" Vector__XXX
+
+BO_ 258 Cell_Voltages_02: 8 BMS_Master
+ SG_ Cell_Voltage_8 : 48|16@1- (1,0) [-32768|32767] "mV" Vector__XXX
+ SG_ Cell_Voltage_7 : 32|16@1- (1,0) [-32768|32767] "mV" Vector__XXX
+ SG_ Cell_Voltage_6 : 16|16@1- (1,0) [-32768|32767] "mV" Vector__XXX
+ SG_ Cell_Voltage_5 : 0|16@1- (1,0) [-32768|32767] "mV" Vector__XXX
+
+BO_ 257 Cell_Voltages_01: 8 BMS_Master
+ SG_ Cell_Voltage_4 : 48|16@1- (1,0) [-32768|32767] "mV" Vector__XXX
+ SG_ Cell_Voltage_3 : 32|16@1- (1,0) [-32768|32767] "mV" Vector__XXX
+ SG_ Cell_Voltage_2 : 16|16@1- (1,0) [-32768|32767] "mV" Vector__XXX
+ SG_ Cell_Voltage_1 : 0|16@1- (1,0) [-32768|32767] "mV" Vector__XXX
+
+
+
+CM_ BO_ 3221225472 "This is a message for not used signals, created by Vector CANdb++ DBC OLE DB Provider.";
+CM_ SG_ 368 Cell_Temperature_6 "772 Redundant Channel 2";
+CM_ SG_ 368 Cell_Temperature_5 "772 Redundant Channel 1
+";
+CM_ SG_ 368 Cell_Temperature_4 "774 Redundant Channel 4";
+CM_ SG_ 368 Cell_Temperature_3 "774 Redundant Channel 3
+";
+CM_ SG_ 368 Cell_Temperature_2 "774 Redundant Channel 2
+";
+CM_ SG_ 368 Cell_Temperature_1 "774 Redundant Channel 1";
+BA_DEF_ SG_  "GenSigStartValue" INT 0 255;
+BA_DEF_ SG_  "GenSigSendType" ENUM  "Cyclic","OnWrite","OnWriteWithRepetition","OnChange";
+BA_DEF_ SG_  "GenSigInactiveValue" INT 0 0;
+BA_DEF_ BO_  "GenMsgCycleTime" INT 0 0;
+BA_DEF_ BO_  "GenMsgSendType" ENUM  "Cyclic","IfActive","NoMsgSendType","vector_leerstring";
+BA_DEF_ BU_  "ECU" STRING ;
+BA_DEF_ BU_  "NmStationAddress" HEX 0 0;
+BA_DEF_  "DBName" STRING ;
+BA_DEF_ SG_  "FOC_SIG_RX_TIME_OUT" INT 0 0;
+BA_DEF_ SG_  "FOC_SIG_RX_FIRST_TIME_OUT" INT 0 0;
+BA_DEF_  "FOC_CHECK_FRAME_LEN" ENUM  "FOC_SIG_LEN_CHECK","FOC_NO_CHECK","FOC_FRM_LEN_CHECK";
+BA_DEF_ BU_  "FDC_PRE_TX_CALLBACK" STRING ;
+BA_DEF_ BU_  "FDC_RX_CALLBACK" STRING ;
+BA_DEF_ BU_  "FOC_NODE_ID" HEX 4096 61440;
+BA_DEF_  "FOC_ATTR_VER_20140609" INT 0 0;
+BA_DEF_  "BusType" STRING ;
+BA_DEF_  "FOC_GEN_PREFIX" STRING ;
+BA_DEF_ SG_  "FOC_NOTIF_CALLBACK_TX_ERROR" STRING ;
+BA_DEF_ SG_  "FOC_NOTIF_CALLBACK_TX" STRING ;
+BA_DEF_ SG_  "FOC_NOTIF_CALLBACK_RX_ERROR" STRING ;
+BA_DEF_ SG_  "FOC_NOTIF_CALLBACK_RX" STRING ;
+BA_DEF_ BU_  "FSM_FAULT_CATEGORY" ENUM  "FSM_FAULT_CAT_NOT_ASSIGNED","FSM_FAULT_CAT_A","FSM_FAULT_CAT_B","FSM_FAULT_CAT_C","FSM_FAULT_CAT_D","FSM_FAULT_CAT_SPECIFIC";
+BA_DEF_ BU_  "FOC_SPEC_DOC" STRING ;
+BA_DEF_ BU_  "FDC_NUM_DYN_ID_RX_FRM" INT 0 0;
+BA_DEF_ BO_  "FONM_INDEX" INT 0 0;
+BA_DEF_ BO_  "FONM_FRAME_TIME_OUT" INT 0 0;
+BA_DEF_ BO_  "FONM_DELTA_INC" INT 0 0;
+BA_DEF_ BU_  "FDC_CAN_HANDLER" STRING ;
+BA_DEF_ BO_  "FONM_DELTA_DEC" INT 0 0;
+BA_DEF_ BO_  "FDC_TYPE" ENUM  "FDC_COM_FRM","FDC_COM_DYN_FRM","FDC_OTHER_FRM";
+BA_DEF_ BU_  "FONM_GLOBAL_TIME_OUT" INT 0 0;
+BA_DEF_ BU_  "FONM_MODE" ENUM  "NONE","INDIRECT","vector_leerstring";
+BA_DEF_ BO_  "FONM_NODE_MONITORING" ENUM  "NO","YES";
+BA_DEF_ SG_  "FOC_COD_DECOD_MODE" ENUM  "FOC_AUTO","FOC_MANUAL";
+BA_DEF_ BO_  "FOC_TX_TIME_OUT" INT 0 0;
+BA_DEF_ SG_  "FOC_INITIAL_VALUE" HEX 0 0;
+BA_DEF_ SG_  "FOC_LENGTH_MODE" ENUM  "FOC_STATIC","FOC_DYNAMIC","FOC_ZERO_LENGTH","vector_leerstring";
+BA_DEF_ SG_  "FOC_TRANSFER_MODE" ENUM  "FOC_TRIGGERED","FOC_PENDING","vector_leerstring";
+BA_DEF_ SG_  "FOC_NOTIF_TYPE_RX" ENUM  "FOC_NONE","FOC_FLAG","FOC_CALLBACK";
+BA_DEF_ SG_  "FOC_NOTIF_TYPE_RX_ERROR" ENUM  "FOC_NONE","FOC_FLAG","FOC_CALLBACK";
+BA_DEF_ SG_  "FOC_NOTIF_TYPE_TX" ENUM  "FOC_NONE","FOC_FLAG","FOC_CALLBACK";
+BA_DEF_ SG_  "FOC_NOTIF_TYPE_TX_ERROR" ENUM  "FOC_NONE","FOC_FLAG","FOC_CALLBACK";
+BA_DEF_ BO_  "FOC_TX_MODE" ENUM  "FOC_PERIODIC","FOC_DIRECT","FOC_MIXED";
+BA_DEF_ BO_  "FOC_TX_PERIOD" INT 0 0;
+BA_DEF_ BO_  "FOC_TX_OFFSET" INT 0 0;
+BA_DEF_ BO_  "FOC_MIN_DELAY_BETWEEN_TX" INT 0 0;
+BA_DEF_ BU_  "FOC_STARTCOM_EXTENSION" ENUM  "FALSE","TRUE";
+BA_DEF_ BU_  "FOC_APP_MODE" ENUM  "FOC_NORMAL_MODE";
+BA_DEF_ BU_  "FOC_STATUS" ENUM  "FOC_STANDARD","FOC_EXTENDED";
+BA_DEF_  "FOC_BUS_TYPE" ENUM  "CAN","CAN_AUTOSAR","I2C","LIN","MPDT","SCI","SPI","SENT";
+BA_DEF_DEF_  "GenSigStartValue" 0;
+BA_DEF_DEF_  "GenSigSendType" "Cyclic";
+BA_DEF_DEF_  "GenSigInactiveValue" 0;
+BA_DEF_DEF_  "GenMsgCycleTime" 0;
+BA_DEF_DEF_  "GenMsgSendType" "Cyclic";
+BA_DEF_DEF_  "ECU" "";
+BA_DEF_DEF_  "NmStationAddress" 0;
+BA_DEF_DEF_  "DBName" "";
+BA_DEF_DEF_  "FOC_SIG_RX_TIME_OUT" 0;
+BA_DEF_DEF_  "FOC_SIG_RX_FIRST_TIME_OUT" 0;
+BA_DEF_DEF_  "FOC_CHECK_FRAME_LEN" "FOC_SIG_LEN_CHECK";
+BA_DEF_DEF_  "FDC_PRE_TX_CALLBACK" "";
+BA_DEF_DEF_  "FDC_RX_CALLBACK" "";
+BA_DEF_DEF_  "FOC_NODE_ID" 4096;
+BA_DEF_DEF_  "FOC_ATTR_VER_20140609" 0;
+BA_DEF_DEF_  "BusType" "";
+BA_DEF_DEF_  "FOC_GEN_PREFIX" "";
+BA_DEF_DEF_  "FOC_NOTIF_CALLBACK_TX_ERROR" "";
+BA_DEF_DEF_  "FOC_NOTIF_CALLBACK_TX" "";
+BA_DEF_DEF_  "FOC_NOTIF_CALLBACK_RX_ERROR" "";
+BA_DEF_DEF_  "FOC_NOTIF_CALLBACK_RX" "";
+BA_DEF_DEF_  "FSM_FAULT_CATEGORY" "FSM_FAULT_CAT_NOT_ASSIGNED";
+BA_DEF_DEF_  "FOC_SPEC_DOC" "";
+BA_DEF_DEF_  "FDC_NUM_DYN_ID_RX_FRM" 0;
+BA_DEF_DEF_  "FONM_INDEX" 0;
+BA_DEF_DEF_  "FONM_FRAME_TIME_OUT" 0;
+BA_DEF_DEF_  "FONM_DELTA_INC" 0;
+BA_DEF_DEF_  "FDC_CAN_HANDLER" "";
+BA_DEF_DEF_  "FONM_DELTA_DEC" 0;
+BA_DEF_DEF_  "FDC_TYPE" "FDC_COM_FRM";
+BA_DEF_DEF_  "FONM_GLOBAL_TIME_OUT" 0;
+BA_DEF_DEF_  "FONM_MODE" "NONE";
+BA_DEF_DEF_  "FONM_NODE_MONITORING" "NO";
+BA_DEF_DEF_  "FOC_COD_DECOD_MODE" "FOC_AUTO";
+BA_DEF_DEF_  "FOC_TX_TIME_OUT" 0;
+BA_DEF_DEF_  "FOC_INITIAL_VALUE" 0;
+BA_DEF_DEF_  "FOC_LENGTH_MODE" "FOC_STATIC";
+BA_DEF_DEF_  "FOC_TRANSFER_MODE" "FOC_PENDING";
+BA_DEF_DEF_  "FOC_NOTIF_TYPE_RX" "FOC_NONE";
+BA_DEF_DEF_  "FOC_NOTIF_TYPE_RX_ERROR" "FOC_NONE";
+BA_DEF_DEF_  "FOC_NOTIF_TYPE_TX" "FOC_NONE";
+BA_DEF_DEF_  "FOC_NOTIF_TYPE_TX_ERROR" "FOC_NONE";
+BA_DEF_DEF_  "FOC_TX_MODE" "FOC_PERIODIC";
+BA_DEF_DEF_  "FOC_TX_PERIOD" 100;
+BA_DEF_DEF_  "FOC_TX_OFFSET" 0;
+BA_DEF_DEF_  "FOC_MIN_DELAY_BETWEEN_TX" 0;
+BA_DEF_DEF_  "FOC_STARTCOM_EXTENSION" "FALSE";
+BA_DEF_DEF_  "FOC_APP_MODE" "FOC_NORMAL_MODE";
+BA_DEF_DEF_  "FOC_STATUS" "FOC_STANDARD";
+BA_DEF_DEF_  "FOC_BUS_TYPE" "CAN";
+BA_ "DBName" "BMS_database";
+BA_ "FOC_TX_MODE" BO_ 1044 1;
+BA_ "GenMsgSendType" BO_ 1044 1;
+BA_ "GenMsgSendType" BO_ 1299 1;
+BA_ "FOC_TX_MODE" BO_ 1299 1;
+BA_ "GenMsgSendType" BO_ 1298 1;
+BA_ "FOC_TX_MODE" BO_ 1298 1;
+BA_ "GenMsgSendType" BO_ 1297 1;
+BA_ "FOC_TX_MODE" BO_ 1297 1;
+BA_ "GenMsgSendType" BO_ 1296 1;
+BA_ "FOC_TX_MODE" BO_ 1296 1;
+BA_ "GenMsgSendType" BO_ 1295 1;
+BA_ "FOC_TX_MODE" BO_ 1295 1;
+BA_ "GenMsgSendType" BO_ 1294 1;
+BA_ "FOC_TX_MODE" BO_ 1294 1;
+BA_ "GenMsgSendType" BO_ 1293 1;
+BA_ "FOC_TX_MODE" BO_ 1293 1;
+BA_ "GenMsgSendType" BO_ 1292 1;
+BA_ "FOC_TX_MODE" BO_ 1292 1;
+BA_ "GenMsgSendType" BO_ 1291 1;
+BA_ "FOC_TX_MODE" BO_ 1291 1;
+BA_ "GenMsgSendType" BO_ 1290 1;
+BA_ "FOC_TX_MODE" BO_ 1290 1;
+BA_ "GenMsgSendType" BO_ 1289 1;
+BA_ "FOC_TX_MODE" BO_ 1289 1;
+BA_ "GenMsgSendType" BO_ 1288 1;
+BA_ "FOC_TX_MODE" BO_ 1288 1;
+BA_ "GenMsgSendType" BO_ 1287 1;
+BA_ "FOC_TX_MODE" BO_ 1287 1;
+BA_ "GenMsgSendType" BO_ 1286 1;
+BA_ "FOC_TX_MODE" BO_ 1286 1;
+BA_ "GenMsgSendType" BO_ 1285 1;
+BA_ "FOC_TX_MODE" BO_ 1285 1;
+BA_ "GenMsgSendType" BO_ 16 1;
+BA_ "FOC_TX_MODE" BO_ 16 1;
+BA_ "GenMsgSendType" BO_ 3 1;
+BA_ "FOC_TX_MODE" BO_ 3 1;
+BA_ "GenMsgSendType" BO_ 2 1;
+BA_ "FOC_TX_MODE" BO_ 2 1;
+BA_ "FOC_TX_PERIOD" BO_ 1282 3000;
+BA_ "GenMsgSendType" BO_ 1282 1;
+BA_ "FOC_TX_MODE" BO_ 1282 1;
+BA_ "FOC_TX_PERIOD" BO_ 1281 3000;
+BA_ "GenMsgSendType" BO_ 1281 1;
+BA_ "FOC_TX_MODE" BO_ 1281 1;
+BA_ "FOC_TX_PERIOD" BO_ 1280 3000;
+BA_ "GenMsgSendType" BO_ 1280 1;
+BA_ "FOC_TX_MODE" BO_ 1280 1;
+BA_ "FOC_TX_PERIOD" BO_ 517 3000;
+BA_ "GenMsgSendType" BO_ 517 1;
+BA_ "FOC_TX_MODE" BO_ 517 1;
+BA_ "FOC_TX_MODE" BO_ 6 1;
+BA_ "GenMsgSendType" BO_ 6 1;
+BA_ "FOC_TX_PERIOD" BO_ 1 3000;
+BA_ "GenMsgSendType" BO_ 1 1;
+BA_ "FOC_TX_MODE" BO_ 1 1;
+BA_ "GenMsgSendType" BO_ 514 1;
+BA_ "FOC_TX_MODE" BO_ 514 1;
+BA_ "GenMsgSendType" BO_ 513 1;
+BA_ "FOC_TX_MODE" BO_ 513 1;
+BA_ "FOC_TX_MODE" BO_ 512 1;
+BA_ "GenMsgSendType" BO_ 512 1;
+BA_ "GenMsgSendType" BO_ 385 1;
+BA_ "FOC_TX_MODE" BO_ 385 1;
+BA_ "GenMsgSendType" BO_ 384 1;
+BA_ "FOC_TX_MODE" BO_ 384 1;
+BA_ "GenMsgSendType" BO_ 368 1;
+BA_ "FOC_TX_MODE" BO_ 368 1;
+BA_ "FOC_TX_PERIOD" BO_ 357 3000;
+BA_ "GenMsgSendType" BO_ 357 1;
+BA_ "FOC_TX_MODE" BO_ 357 1;
+BA_ "FOC_TX_PERIOD" BO_ 336 3000;
+BA_ "GenMsgSendType" BO_ 336 1;
+BA_ "FOC_TX_MODE" BO_ 336 1;
+BA_ "GenMsgSendType" BO_ 261 1;
+BA_ "FOC_TX_MODE" BO_ 261 1;
+BA_ "GenMsgSendType" BO_ 260 1;
+BA_ "FOC_TX_MODE" BO_ 260 1;
+BA_ "GenMsgSendType" BO_ 259 1;
+BA_ "FOC_TX_MODE" BO_ 259 1;
+BA_ "GenMsgSendType" BO_ 258 1;
+BA_ "FOC_TX_MODE" BO_ 258 1;
+BA_ "GenMsgSendType" BO_ 257 1;
+BA_ "FOC_TX_MODE" BO_ 257 1;
+BA_ "GenSigSendType" SG_ 1044 IC774_Sec_Temperature 1;
+BA_ "GenSigSendType" SG_ 1044 IC774_Prim_Temperature 1;
+BA_ "GenSigSendType" SG_ 1044 IC772_Temperature 1;
+BA_ "GenSigSendType" SG_ 1044 Balancing_Temperature 1;
+BA_ "GenSigSendType" SG_ 1044 PCB_Temperature 1;
+BA_ "GenSigSendType" SG_ 1299 MaskCell_PFMSMT 1;
+BA_ "GenSigSendType" SG_ 1299 MaskCell_PFOMSMT 1;
+BA_ "GenSigSendType" SG_ 1298 MaskCell_FMSMT 1;
+BA_ "GenSigSendType" SG_ 1298 MaskCell_WMSMT 1;
+BA_ "GenSigSendType" SG_ 1297 MaskCell_FOCL 1;
+BA_ "GenSigSendType" SG_ 1297 MaskCell_WOCL 1;
+BA_ "GenSigSendType" SG_ 1296 MaskCell_PFUSOC 1;
+BA_ "GenSigSendType" SG_ 1296 MaskCell_PFDUSOC 1;
+BA_ "GenSigSendType" SG_ 1295 MaskCell_FUSOC 1;
+BA_ "GenSigSendType" SG_ 1295 MaskCell_WUSOC 1;
+BA_ "GenSigSendType" SG_ 1294 MaskCell_PFOSOC 1;
+BA_ "GenSigSendType" SG_ 1294 MaskCell_PFDOSOC 1;
+BA_ "GenSigSendType" SG_ 1293 MaskCell_POSOC 1;
+BA_ "GenSigSendType" SG_ 1293 MaskCell_WOSOC 1;
+BA_ "GenSigSendType" SG_ 1292 MaskCell_PFUT 1;
+BA_ "GenSigSendType" SG_ 1292 MaskCell_PFDUT 1;
+BA_ "GenSigSendType" SG_ 1291 MaskCell_FUT 1;
+BA_ "GenSigSendType" SG_ 1291 MaskCell_WUT 1;
+BA_ "GenSigSendType" SG_ 1290 MaskCell_PFOT 1;
+BA_ "GenSigSendType" SG_ 1290 MaskCell_PFDOT 1;
+BA_ "GenSigSendType" SG_ 1289 MaskCell_FOT 1;
+BA_ "GenSigSendType" SG_ 1289 MaskCell_WOT 1;
+BA_ "GenSigSendType" SG_ 1288 MaskCell_PFUV 1;
+BA_ "GenSigSendType" SG_ 1288 MaskCell_PFDUV 1;
+BA_ "GenSigSendType" SG_ 1287 MaskCell_FUV 1;
+BA_ "GenSigSendType" SG_ 1287 MaskCell_WUV 1;
+BA_ "GenSigSendType" SG_ 1286 MaskCell_PFOV 1;
+BA_ "GenSigSendType" SG_ 1286 MaskCell_PFDOV 1;
+BA_ "GenSigSendType" SG_ 1285 MaskCell_FOV 1;
+BA_ "GenSigSendType" SG_ 1285 MaskCell_WOV 1;
+BA_ "GenSigSendType" SG_ 16 Not_Cell_NTC 1;
+BA_ "GenSigSendType" SG_ 16 NTC_Num 1;
+BA_ "GenSigSendType" SG_ 16 Cell_Num 1;
+BA_ "GenSigSendType" SG_ 16 Sel_Cells_NTC 1;
+BA_ "GenSigSendType" SG_ 16 Timestamp 1;
+BA_ "GenSigSendType" SG_ 16 Diag_Code 1;
+BA_ "GenSigSendType" SG_ 16 Fault_Class 1;
+BA_ "GenSigSendType" SG_ 3 IncreaseFaultMask 1;
+BA_ "GenSigSendType" SG_ 3 PermanentFaultMask 1;
+BA_ "GenSigSendType" SG_ 2 FaultMask 1;
+BA_ "GenSigSendType" SG_ 2 WarningMask 1;
+BA_ "GenSigSendType" SG_ 1282 Yaw 1;
+BA_ "GenSigSendType" SG_ 1282 Roll 1;
+BA_ "GenSigSendType" SG_ 1282 Pitch 1;
+BA_ "GenSigSendType" SG_ 1281 Accel_Z 1;
+BA_ "GenSigSendType" SG_ 1281 Accel_Y 1;
+BA_ "GenSigSendType" SG_ 1281 Accel_X 1;
+BA_ "GenSigSendType" SG_ 1280 Pressure_Data 1;
+BA_ "GenSigSendType" SG_ 517 SOH 1;
+BA_ "GenSigSendType" SG_ 6 BMS_FW_Version 1;
+BA_ "GenSigSendType" SG_ 6 BMS_HW_Version 1;
+BA_ "GenSigSendType" SG_ 6 BMS_ID 1;
+BA_ "GenSigSendType" SG_ 1 InternalErrorMask 1;
+BA_ "GenSigSendType" SG_ 1 FC_Level 1;
+BA_ "GenSigSendType" SG_ 1 Peripheral_status 1;
+BA_ "GenSigSendType" SG_ 1 BMS_State_Machine 1;
+BA_ "GenSigSendType" SG_ 514 Cell_SoC_18 1;
+BA_ "GenSigSendType" SG_ 514 Cell_SoC_17 1;
+BA_ "GenSigSendType" SG_ 513 Cell_SoC_16 1;
+BA_ "GenSigSendType" SG_ 513 Cell_SoC_15 1;
+BA_ "GenSigSendType" SG_ 513 Cell_SoC_14 1;
+BA_ "GenSigSendType" SG_ 513 Cell_SoC_13 1;
+BA_ "GenSigSendType" SG_ 513 Cell_SoC_12 1;
+BA_ "GenSigSendType" SG_ 513 Cell_SoC_11 1;
+BA_ "GenSigSendType" SG_ 513 Cell_SoC_10 1;
+BA_ "GenSigSendType" SG_ 513 Cell_SoC_9 1;
+BA_ "GenSigSendType" SG_ 512 Cell_SoC_8 1;
+BA_ "GenSigSendType" SG_ 512 Cell_SoC_7 1;
+BA_ "GenSigSendType" SG_ 512 Cell_SoC_6 1;
+BA_ "GenSigSendType" SG_ 512 Cell_SoC_5 1;
+BA_ "GenSigSendType" SG_ 512 Cell_SoC_4 1;
+BA_ "GenSigSendType" SG_ 512 Cell_SoC_3 1;
+BA_ "GenSigSendType" SG_ 512 Cell_SoC_2 1;
+BA_ "GenSigSendType" SG_ 512 Cell_SoC_1 1;
+BA_ "GenSigSendType" SG_ 385 CCS_Temperature_4 1;
+BA_ "GenSigSendType" SG_ 385 CCS_Temperature_3 1;
+BA_ "GenSigSendType" SG_ 385 CCS_Temperature_2 1;
+BA_ "GenSigSendType" SG_ 385 CCS_Temperature_1 1;
+BA_ "GenSigSendType" SG_ 384 Box_Temperature_6 1;
+BA_ "GenSigSendType" SG_ 384 Box_Temperature_5 1;
+BA_ "GenSigSendType" SG_ 384 Box_Temperature_4 1;
+BA_ "GenSigSendType" SG_ 384 Box_Temperature_3 1;
+BA_ "GenSigSendType" SG_ 384 Box_Temperature_2 1;
+BA_ "GenSigSendType" SG_ 384 Box_Temperature_1 1;
+BA_ "GenSigSendType" SG_ 368 Cell_Temperature_6 1;
+BA_ "GenSigSendType" SG_ 368 Cell_Temperature_5 1;
+BA_ "GenSigSendType" SG_ 368 Cell_Temperature_4 1;
+BA_ "GenSigSendType" SG_ 368 Cell_Temperature_3 1;
+BA_ "GenSigSendType" SG_ 368 Cell_Temperature_2 1;
+BA_ "GenSigSendType" SG_ 368 Cell_Temperature_1 1;
+BA_ "GenSigSendType" SG_ 357 Current_Measurement 1;
+BA_ "GenSigSendType" SG_ 357 Coulomb_Counting 1;
+BA_ "GenSigSendType" SG_ 336 Total_Voltage 1;
+BA_ "GenSigSendType" SG_ 261 Cell_Voltage_18 1;
+BA_ "GenSigSendType" SG_ 261 Cell_Voltage_17 1;
+BA_ "GenSigSendType" SG_ 260 Cell_Voltage_16 1;
+BA_ "GenSigSendType" SG_ 260 Cell_Voltage_15 1;
+BA_ "GenSigSendType" SG_ 260 Cell_Voltage_14 1;
+BA_ "GenSigSendType" SG_ 260 Cell_Voltage_13 1;
+BA_ "GenSigSendType" SG_ 259 Cell_Voltage_12 1;
+BA_ "GenSigSendType" SG_ 259 Cell_Voltage_11 1;
+BA_ "GenSigSendType" SG_ 259 Cell_Voltage_10 1;
+BA_ "GenSigSendType" SG_ 259 Cell_Voltage_9 1;
+BA_ "GenSigSendType" SG_ 258 Cell_Voltage_8 1;
+BA_ "GenSigSendType" SG_ 258 Cell_Voltage_7 1;
+BA_ "GenSigSendType" SG_ 258 Cell_Voltage_6 1;
+BA_ "GenSigSendType" SG_ 258 Cell_Voltage_5 1;
+BA_ "GenSigSendType" SG_ 257 Cell_Voltage_4 1;
+BA_ "GenSigSendType" SG_ 257 Cell_Voltage_3 1;
+BA_ "GenSigSendType" SG_ 257 Cell_Voltage_2 1;
+BA_ "GenSigSendType" SG_ 257 Cell_Voltage_1 1;
+VAL_ 16 Diag_Code 98 "Diag_ALG_SOH" 97 "Diag_CPU_PERR" 96 "Diag_CPU_ERR" 95 "Diag_LVPWR2_ERR" 94 "Diag_LVPWR1_ERR" 93 "Diag_Comm_CAN_Err" 92 "Diag_Comm_Spi_Err" 91 "Diag_Conf_Eeprom_Err" 90 "Diag_Conf_Sys_Err" 89 "Diag_Conf_Acq_Err" 88 "Diag_Data_Acq_Err" 87 "Diag_DATAINT_ERR" 86 "Diag_BAL_ERR" 85 "Diag_PCC_FOT" 84 "Diag_PCC_WOT" 83 "Diag_Cont_FOT" 82 "Diag_Cont_WOT" 81 "Diag_PYR_NP" 80 "Diag_PYR_SLS" 79 "Diag_PYR_SHS" 78 "Diag_HEAT_ST" 77 "Diag_HEAT_NP" 76 "Diag_HEAT_SLS" 75 "Diag_HEAT_SHS" 74 "Diag_PCC_ST" 73 "Diag_PCC_NP" 72 "Diag_PCC_SLS" 71 "Diag_PCC_SHS" 70 "Diag_Cont_ST" 69 "Diag_Cont_NP" 68 "Diag_Cont_SLS" 67 "Diag_Cont_SHS" 66 "Diag_Bal_FIOT" 65 "Diag_Bal_WIOT" 64 "Diag_Bal_FCBT" 63 "Diag_Bal_FTBV" 62 "Diag_Bal_WTBV" 61 "Diag_Batt_PFCRASH" 60 "Diag_Batt_PFDMATEMP" 59 "Diag_Batt_FMATEMP" 58 "Diag_Batt_WMATEMP" 57 "Diag_Batt_FOTPCB" 56 "Diag_Batt_WOTPCB" 55 "Diag_Batt_FMSMT" 54 "Diag_Batt_WMSMT" 53 "Diag_Batt_FMSOH" 52 "Diag_Batt_WMSOH" 51 "Diag_Batt_FUSOH" 50 "Diag_Batt_WUSOH" 49 "Diag_Batt_FSC" 48 "Diag_Batt_FOCD" 47 "Diag_Batt_WOCD" 46 "Diag_Batt_FOCC" 45 "Diag_Batt_WOCC" 44 "Diag_Batt_PFUT" 43 "Diag_Batt_FUT" 42 "Diag_Batt_WUT" 41 "Diag_Batt_PFOT" 40 "Diag_Batt_PFDOT" 39 "Diag_Batt_FOT" 38 "Diag_Batt_WOT" 37 "Diag_Batt_PFUV" 36 "Diag_Batt_PFDUV" 35 "Diag_Batt_FUV" 34 "Diag_Batt_WUV" 33 "Diag_Batt_FPOV" 32 "Diag_Batt_FPDOV" 31 "Diag_Batt_FOV" 30 "Diag_Batt_WOV" 29 "Diag_Batt_FACCVM" 28 "Diag_Batt_WACCVM" 27 "Diag_Batt_PFICV" 26 "Diag_Batt_FICV" 25 "Diag_Batt_WICV" 24 "Diag_Cell_FRIR" 23 "Diag_Cell_WRIR" 22 "Diag_Cell_FOCV" 21 "Diag_Cell_PFUSOC" 20 "Diag_Cell_FUSOC" 19 "Diag_Cell_WUSOC" 18 "Diag_Cell_PFSOC" 17 "Diag_Cell_FOSOC" 16 "Diag_Cell_WOSOC" 15 "Diag_Cell_PFUT" 14 "Diag_Cell_FUT" 13 "Diag_Cell_WUT" 12 "Diag_Cell_PFOT" 11 "Diag_Cell_PFDOT" 10 "Diag_Cell_FOT" 9 "Diag_Cell_WOT" 8 "Diag_Cell_PFUV" 7 "Diag_Cell_PFDUV" 6 "Diag_Cell_FUV" 5 "Diag_Cell_WUV" 4 "Diag_Cell_PFOV" 3 "Diag_Cell_PFDOV" 2 "Diag_Cell_FOV" 1 "Diag_Cell_WOV" 0 "Not Specified" ;
+VAL_ 16 Fault_Class 3 "FC2" 2 "FC1" 1 "FC0" 0 "FC_None" ;
+VAL_ 1 FC_Level 3 "FC2" 2 "FC1" 1 "FC0" 0 "FC_None" ;
+VAL_ 1 BMS_State_Machine 9 "Permanent Error state" 8 "Error state" 7 "Full Discharge state" 6 "Discharge state" 5 "Charge state" 4 "Predischarge state" 3 "Precharge state" 2 "Idle state" 1 "Config state" 0 "Init state" ;
+
