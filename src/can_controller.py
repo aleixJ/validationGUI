@@ -31,6 +31,7 @@ class can_controller:
         self.bus = self.create_can_bus()
         self.db = self.load_dbc_file(path="DBC/BMS_multiplex.dbc")
         self.data = self.setup_data()
+        self.listeners = []
         # utils.print_data_structure(self.data)  # print the dictionary
 
     # Destructor
@@ -166,6 +167,20 @@ class can_controller:
             print(f"Message: {message.name}")
             for signal in message.signals:
                 print(f"Signal: {signal.name}")
+
+    def add_listener(self, listener: Any) -> None:
+        """
+        Add a listener to the list of listeners
+        :param listener: The listener to add
+        """
+        self.listeners.append(listener)
+
+    def notify_listeners(self) -> None:
+        """
+        Notify all listeners
+        """
+        for listener in self.listeners:
+            listener(self.data)
 
 
 if __name__ == "__main__":
