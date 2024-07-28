@@ -10,7 +10,7 @@
 
 ## Documentation
 
-### can_controller
+### can_model
 - `data`: Contains the data in memory received from the CAN bus.
    Is built dynamically in function of the `.dbc` file. The function `setup_data` is used to initialize the structure.
    The class `Utils` contains a method `print_data_structure` to print the data structure withouth the data.

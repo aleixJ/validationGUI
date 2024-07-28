@@ -12,9 +12,10 @@ from typing import Any
 from collections import deque
 
 
-class can_controller:
+class can_model:
     """
-    Controller class for CAN communication
+    Controller class for the CAN communication.
+    Model because it is responsible for the data and the communication with the CAN bus.
     """
 
     # Constructor
@@ -25,7 +26,7 @@ class can_controller:
         bitrate: int = 500000,
     ):
         """
-        Constructor for the can_controller class
+        Constructor for the can_model class
         :param channel: The channel number to use for CAN communication
         :param interface: The interface to use for CAN communication
         :param bitrate: The bitrate to use for CAN communication
@@ -189,7 +190,7 @@ class can_controller:
 
 
 if __name__ == "__main__":
-    temp = can_controller()
+    temp = can_model()
     while True:
         message = temp.receive_can_message()
         if message is not None:

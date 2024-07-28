@@ -4,6 +4,7 @@ import matplotlib.dates as mdates
 from datetime import datetime
 import matplotlib.lines
 
+
 ############################################
 # NOT USED
 ############################################
@@ -16,8 +17,8 @@ class plotBMS:
     The plot will be updated in real-time using the animation module
     """
 
-    def __init__(self, can_controller):
-        self.can_controller = can_controller
+    def __init__(self, can_model):
+        self.can_model = can_model
         self.fig, (self.ax1, self.ax2) = plt.subplots(2, 1)
 
         # Initialize empty lines for temperature and voltage plots
@@ -60,7 +61,7 @@ class plotBMS:
         :return: The updated lines
         """
         for idx, (temp_name, temp_dict) in enumerate(
-            self.can_controller.data["Cell_Temperatures"].items()
+            self.can_model.data["Cell_Temperatures"].items()
         ):
             if temp_dict is not None:
                 self.lines_temp[idx].set_data(
@@ -78,7 +79,7 @@ class plotBMS:
         :return: The updated lines
         """
         for idx, (volt_name, volt_dict) in enumerate(
-            self.can_controller.data["Cell_Voltages"].items()
+            self.can_model.data["Cell_Voltages"].items()
         ):
             if volt_dict is not None:
                 self.lines_volt[idx].set_data(
