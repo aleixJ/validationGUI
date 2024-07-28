@@ -1,15 +1,21 @@
 import can
 import cantools
 import re
+import sys
+
+# include the path for the utils.py file (if this file is executed directly)
+sys.path.append("src")
 import utils
+
 from typing import Union
 from typing import Any
 from collections import deque
 
 
-class can_controller:
+class can_model:
     """
-    Controller class for CAN communication
+    Controller class for the CAN communication.
+    Model because it is responsible for the data and the communication with the CAN bus.
     """
 
     # Constructor
@@ -20,7 +26,7 @@ class can_controller:
         bitrate: int = 500000,
     ):
         """
-        Constructor for the can_controller class
+        Constructor for the can_model class
         :param channel: The channel number to use for CAN communication
         :param interface: The interface to use for CAN communication
         :param bitrate: The bitrate to use for CAN communication
@@ -30,7 +36,8 @@ class can_controller:
         self.bitrate = bitrate
         self.bus = self.create_can_bus()
         self.db = self.load_dbc_file(path="DBC/BMS_multiplex.dbc")
-        self.data = self.setup_data()
+        self.data = self.setup_data()  # Not used in version
+        self.listeners = []
         # utils.print_data_structure(self.data)  # print the dictionary
 
     # Destructor
@@ -102,8 +109,7 @@ class can_controller:
 
         for message in self.db.messages:
             # Use regex to remove trailing numbers and underscores
-            base_name = re.sub(r"_\d+$", "", message.name)
-
+            base_name = utils.base_name(message.name)
             if base_name not in grouped_messages:
                 grouped_messages[base_name] = {}
             for signal in message.signals:
@@ -154,6 +160,7 @@ class can_controller:
             decoded["timestamp"] = message.timestamp
             # save the data in self.data
             self.save_data(decoded)
+            self._notify_listeners(decoded)
             return decoded
         else:
             return None
@@ -167,9 +174,24 @@ class can_controller:
             for signal in message.signals:
                 print(f"Signal: {signal.name}")
 
+    def add_listener(self, listener: Any) -> None:
+        """
+        Add a listener to the list of listeners
+        :param listener: The listener to add
+        """
+        self.listeners.append(listener)
+
+    def _notify_listeners(self, data: dict) -> None:
+        """
+        Notify all listeners.
+        :param data: The data to send to the listeners
+        """
+        for listener in self.listeners:
+            listener(data)
+
 
 if __name__ == "__main__":
-    temp = can_controller()
+    temp = can_model()
     while True:
         message = temp.receive_can_message()
         if message is not None:

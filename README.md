@@ -10,7 +10,7 @@
 
 ## Documentation
 
-# can_controller
+### can_model
 - `data`: Contains the data in memory received from the CAN bus.
    Is built dynamically in function of the `.dbc` file. The function `setup_data` is used to initialize the structure.
    The class `Utils` contains a method `print_data_structure` to print the data structure withouth the data.
@@ -31,4 +31,12 @@
    ```
    'None' until the first message is received.
 
+
+### Interface
+
+The file interface.ui is the Qt Designer file. It can be opened with the Qt Designer tool to modify the interface.
+When the file is modified, it must be converted to a Python file using the following command:
+```bash
+pyside6-uic ui_index.ui -o ui_index.py
+```
 

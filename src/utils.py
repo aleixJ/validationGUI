@@ -32,3 +32,12 @@ def natural_sort_key(item: Any) -> Any:
         name[: match.start()] if match else name,
         int(match.group(0)) if match else 0,
     )
+
+
+def base_name(message: str) -> str:
+    """
+    Get the base name of the message
+    :param message: The message name
+    :return: The base name
+    """
+    return re.sub(r"_\d+$", "", message)
