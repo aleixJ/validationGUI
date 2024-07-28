@@ -231,12 +231,12 @@ class Ui_MainWindow(object):
 
         self.verticalLayout_13.addWidget(self.cell16_title)
 
-        self.cell16_temperature = QLabel(self.cell16_frame)
-        self.cell16_temperature.setObjectName(u"cell16_temperature")
-        self.cell16_temperature.setFont(font1)
-        self.cell16_temperature.setAlignment(Qt.AlignCenter)
+        self.cell16_voltage = QLabel(self.cell16_frame)
+        self.cell16_voltage.setObjectName(u"cell16_voltage")
+        self.cell16_voltage.setFont(font1)
+        self.cell16_voltage.setAlignment(Qt.AlignCenter)
 
-        self.verticalLayout_13.addWidget(self.cell16_temperature)
+        self.verticalLayout_13.addWidget(self.cell16_voltage)
 
         self.cell16_soc = QLabel(self.cell16_frame)
         self.cell16_soc.setObjectName(u"cell16_soc")
@@ -261,12 +261,12 @@ class Ui_MainWindow(object):
 
         self.verticalLayout_9.addWidget(self.cell2_title)
 
-        self.cell2_temperature = QLabel(self.cell2_frame)
-        self.cell2_temperature.setObjectName(u"cell2_temperature")
-        self.cell2_temperature.setFont(font1)
-        self.cell2_temperature.setAlignment(Qt.AlignCenter)
+        self.cell2_voltage = QLabel(self.cell2_frame)
+        self.cell2_voltage.setObjectName(u"cell2_voltage")
+        self.cell2_voltage.setFont(font1)
+        self.cell2_voltage.setAlignment(Qt.AlignCenter)
 
-        self.verticalLayout_9.addWidget(self.cell2_temperature)
+        self.verticalLayout_9.addWidget(self.cell2_voltage)
 
         self.cell2_soc = QLabel(self.cell2_frame)
         self.cell2_soc.setObjectName(u"cell2_soc")
@@ -291,12 +291,12 @@ class Ui_MainWindow(object):
 
         self.verticalLayout_15.addWidget(self.cell8_title)
 
-        self.cell8_temperature = QLabel(self.cell8_frame)
-        self.cell8_temperature.setObjectName(u"cell8_temperature")
-        self.cell8_temperature.setFont(font1)
-        self.cell8_temperature.setAlignment(Qt.AlignCenter)
+        self.cell8_voltage = QLabel(self.cell8_frame)
+        self.cell8_voltage.setObjectName(u"cell8_voltage")
+        self.cell8_voltage.setFont(font1)
+        self.cell8_voltage.setAlignment(Qt.AlignCenter)
 
-        self.verticalLayout_15.addWidget(self.cell8_temperature)
+        self.verticalLayout_15.addWidget(self.cell8_voltage)
 
         self.cell8_soc = QLabel(self.cell8_frame)
         self.cell8_soc.setObjectName(u"cell8_soc")
@@ -321,12 +321,12 @@ class Ui_MainWindow(object):
 
         self.verticalLayout_5.addWidget(self.cell7_title)
 
-        self.cell7_temperature = QLabel(self.cell7_frame)
-        self.cell7_temperature.setObjectName(u"cell7_temperature")
-        self.cell7_temperature.setFont(font1)
-        self.cell7_temperature.setAlignment(Qt.AlignCenter)
+        self.cell7_voltage = QLabel(self.cell7_frame)
+        self.cell7_voltage.setObjectName(u"cell7_voltage")
+        self.cell7_voltage.setFont(font1)
+        self.cell7_voltage.setAlignment(Qt.AlignCenter)
 
-        self.verticalLayout_5.addWidget(self.cell7_temperature)
+        self.verticalLayout_5.addWidget(self.cell7_voltage)
 
         self.cell7_soc = QLabel(self.cell7_frame)
         self.cell7_soc.setObjectName(u"cell7_soc")
@@ -351,12 +351,12 @@ class Ui_MainWindow(object):
 
         self.verticalLayout_14.addWidget(self.cell12_title)
 
-        self.cell12_temperature = QLabel(self.cell12_frame)
-        self.cell12_temperature.setObjectName(u"cell12_temperature")
-        self.cell12_temperature.setFont(font1)
-        self.cell12_temperature.setAlignment(Qt.AlignCenter)
+        self.cell12_voltage = QLabel(self.cell12_frame)
+        self.cell12_voltage.setObjectName(u"cell12_voltage")
+        self.cell12_voltage.setFont(font1)
+        self.cell12_voltage.setAlignment(Qt.AlignCenter)
 
-        self.verticalLayout_14.addWidget(self.cell12_temperature)
+        self.verticalLayout_14.addWidget(self.cell12_voltage)
 
         self.cell12_soc = QLabel(self.cell12_frame)
         self.cell12_soc.setObjectName(u"cell12_soc")
@@ -381,12 +381,12 @@ class Ui_MainWindow(object):
 
         self.verticalLayout_10.addWidget(self.cell1_title)
 
-        self.cell1_temperature = QLabel(self.cell1_frame)
-        self.cell1_temperature.setObjectName(u"cell1_temperature")
-        self.cell1_temperature.setFont(font1)
-        self.cell1_temperature.setAlignment(Qt.AlignCenter)
+        self.cell1_voltage = QLabel(self.cell1_frame)
+        self.cell1_voltage.setObjectName(u"cell1_voltage")
+        self.cell1_voltage.setFont(font1)
+        self.cell1_voltage.setAlignment(Qt.AlignCenter)
 
-        self.verticalLayout_10.addWidget(self.cell1_temperature)
+        self.verticalLayout_10.addWidget(self.cell1_voltage)
 
         self.cell1_soc = QLabel(self.cell1_frame)
         self.cell1_soc.setObjectName(u"cell1_soc")
@@ -411,12 +411,12 @@ class Ui_MainWindow(object):
 
         self.verticalLayout_18.addWidget(self.cell14_title)
 
-        self.cell14_temperature = QLabel(self.cell14_frame)
-        self.cell14_temperature.setObjectName(u"cell14_temperature")
-        self.cell14_temperature.setFont(font1)
-        self.cell14_temperature.setAlignment(Qt.AlignCenter)
+        self.cell14_voltage = QLabel(self.cell14_frame)
+        self.cell14_voltage.setObjectName(u"cell14_voltage")
+        self.cell14_voltage.setFont(font1)
+        self.cell14_voltage.setAlignment(Qt.AlignCenter)
 
-        self.verticalLayout_18.addWidget(self.cell14_temperature)
+        self.verticalLayout_18.addWidget(self.cell14_voltage)
 
         self.cell14_soc = QLabel(self.cell14_frame)
         self.cell14_soc.setObjectName(u"cell14_soc")
@@ -430,6 +430,7 @@ class Ui_MainWindow(object):
 
         self.cell15_frame = QFrame(self.dashboard)
         self.cell15_frame.setObjectName(u"cell15_frame")
+        self.cell15_frame.setStyleSheet(u"")
         self.cell15_frame.setFrameShape(QFrame.StyledPanel)
         self.cell15_frame.setFrameShadow(QFrame.Raised)
         self.verticalLayout_17 = QVBoxLayout(self.cell15_frame)
@@ -441,12 +442,12 @@ class Ui_MainWindow(object):
 
         self.verticalLayout_17.addWidget(self.cell15_title)
 
-        self.cell15_temperature = QLabel(self.cell15_frame)
-        self.cell15_temperature.setObjectName(u"cell15_temperature")
-        self.cell15_temperature.setFont(font1)
-        self.cell15_temperature.setAlignment(Qt.AlignCenter)
+        self.cell15_voltage = QLabel(self.cell15_frame)
+        self.cell15_voltage.setObjectName(u"cell15_voltage")
+        self.cell15_voltage.setFont(font1)
+        self.cell15_voltage.setAlignment(Qt.AlignCenter)
 
-        self.verticalLayout_17.addWidget(self.cell15_temperature)
+        self.verticalLayout_17.addWidget(self.cell15_voltage)
 
         self.cell15_soc = QLabel(self.cell15_frame)
         self.cell15_soc.setObjectName(u"cell15_soc")
@@ -471,12 +472,12 @@ class Ui_MainWindow(object):
 
         self.verticalLayout_6.addWidget(self.cell11_title)
 
-        self.cell11_temperature = QLabel(self.cell11_frame)
-        self.cell11_temperature.setObjectName(u"cell11_temperature")
-        self.cell11_temperature.setFont(font1)
-        self.cell11_temperature.setAlignment(Qt.AlignCenter)
+        self.cell11_voltage = QLabel(self.cell11_frame)
+        self.cell11_voltage.setObjectName(u"cell11_voltage")
+        self.cell11_voltage.setFont(font1)
+        self.cell11_voltage.setAlignment(Qt.AlignCenter)
 
-        self.verticalLayout_6.addWidget(self.cell11_temperature)
+        self.verticalLayout_6.addWidget(self.cell11_voltage)
 
         self.cell11_soc = QLabel(self.cell11_frame)
         self.cell11_soc.setObjectName(u"cell11_soc")
@@ -501,12 +502,12 @@ class Ui_MainWindow(object):
 
         self.verticalLayout_7.addWidget(self.cell10_title)
 
-        self.cell10_temperature = QLabel(self.cell10_frame)
-        self.cell10_temperature.setObjectName(u"cell10_temperature")
-        self.cell10_temperature.setFont(font1)
-        self.cell10_temperature.setAlignment(Qt.AlignCenter)
+        self.cell10_voltage = QLabel(self.cell10_frame)
+        self.cell10_voltage.setObjectName(u"cell10_voltage")
+        self.cell10_voltage.setFont(font1)
+        self.cell10_voltage.setAlignment(Qt.AlignCenter)
 
-        self.verticalLayout_7.addWidget(self.cell10_temperature)
+        self.verticalLayout_7.addWidget(self.cell10_voltage)
 
         self.cell10_soc = QLabel(self.cell10_frame)
         self.cell10_soc.setObjectName(u"cell10_soc")
@@ -531,12 +532,12 @@ class Ui_MainWindow(object):
 
         self.verticalLayout_16.addWidget(self.cell4_title)
 
-        self.cell4_temperature = QLabel(self.cell4_frame)
-        self.cell4_temperature.setObjectName(u"cell4_temperature")
-        self.cell4_temperature.setFont(font1)
-        self.cell4_temperature.setAlignment(Qt.AlignCenter)
+        self.cell4_voltage = QLabel(self.cell4_frame)
+        self.cell4_voltage.setObjectName(u"cell4_voltage")
+        self.cell4_voltage.setFont(font1)
+        self.cell4_voltage.setAlignment(Qt.AlignCenter)
 
-        self.verticalLayout_16.addWidget(self.cell4_temperature)
+        self.verticalLayout_16.addWidget(self.cell4_voltage)
 
         self.cell4_soc = QLabel(self.cell4_frame)
         self.cell4_soc.setObjectName(u"cell4_soc")
@@ -561,12 +562,12 @@ class Ui_MainWindow(object):
 
         self.verticalLayout_2.addWidget(self.cell3_title)
 
-        self.cell3_temperature = QLabel(self.cell3_frame)
-        self.cell3_temperature.setObjectName(u"cell3_temperature")
-        self.cell3_temperature.setFont(font1)
-        self.cell3_temperature.setAlignment(Qt.AlignCenter)
+        self.cell3_voltage = QLabel(self.cell3_frame)
+        self.cell3_voltage.setObjectName(u"cell3_voltage")
+        self.cell3_voltage.setFont(font1)
+        self.cell3_voltage.setAlignment(Qt.AlignCenter)
 
-        self.verticalLayout_2.addWidget(self.cell3_temperature)
+        self.verticalLayout_2.addWidget(self.cell3_voltage)
 
         self.cell3_soc = QLabel(self.cell3_frame)
         self.cell3_soc.setObjectName(u"cell3_soc")
@@ -591,12 +592,12 @@ class Ui_MainWindow(object):
 
         self.verticalLayout_11.addWidget(self.cell5_title)
 
-        self.cell5_temperature = QLabel(self.cell5_frame)
-        self.cell5_temperature.setObjectName(u"cell5_temperature")
-        self.cell5_temperature.setFont(font1)
-        self.cell5_temperature.setAlignment(Qt.AlignCenter)
+        self.cell5_voltage = QLabel(self.cell5_frame)
+        self.cell5_voltage.setObjectName(u"cell5_voltage")
+        self.cell5_voltage.setFont(font1)
+        self.cell5_voltage.setAlignment(Qt.AlignCenter)
 
-        self.verticalLayout_11.addWidget(self.cell5_temperature)
+        self.verticalLayout_11.addWidget(self.cell5_voltage)
 
         self.cell5_soc = QLabel(self.cell5_frame)
         self.cell5_soc.setObjectName(u"cell5_soc")
@@ -610,6 +611,10 @@ class Ui_MainWindow(object):
 
         self.cell13_frame = QFrame(self.dashboard)
         self.cell13_frame.setObjectName(u"cell13_frame")
+        font6 = QFont()
+        font6.setStrikeOut(False)
+        self.cell13_frame.setFont(font6)
+        self.cell13_frame.setAutoFillBackground(False)
         self.cell13_frame.setFrameShape(QFrame.StyledPanel)
         self.cell13_frame.setFrameShadow(QFrame.Raised)
         self.verticalLayout_19 = QVBoxLayout(self.cell13_frame)
@@ -621,12 +626,12 @@ class Ui_MainWindow(object):
 
         self.verticalLayout_19.addWidget(self.cell13_title)
 
-        self.cell13_temperature = QLabel(self.cell13_frame)
-        self.cell13_temperature.setObjectName(u"cell13_temperature")
-        self.cell13_temperature.setFont(font1)
-        self.cell13_temperature.setAlignment(Qt.AlignCenter)
+        self.cell13_voltage = QLabel(self.cell13_frame)
+        self.cell13_voltage.setObjectName(u"cell13_voltage")
+        self.cell13_voltage.setFont(font1)
+        self.cell13_voltage.setAlignment(Qt.AlignCenter)
 
-        self.verticalLayout_19.addWidget(self.cell13_temperature)
+        self.verticalLayout_19.addWidget(self.cell13_voltage)
 
         self.cell13_soc = QLabel(self.cell13_frame)
         self.cell13_soc.setObjectName(u"cell13_soc")
@@ -651,12 +656,12 @@ class Ui_MainWindow(object):
 
         self.verticalLayout_8.addWidget(self.cell6_title)
 
-        self.cell6_temperature = QLabel(self.cell6_frame)
-        self.cell6_temperature.setObjectName(u"cell6_temperature")
-        self.cell6_temperature.setFont(font1)
-        self.cell6_temperature.setAlignment(Qt.AlignCenter)
+        self.cell6_voltage = QLabel(self.cell6_frame)
+        self.cell6_voltage.setObjectName(u"cell6_voltage")
+        self.cell6_voltage.setFont(font1)
+        self.cell6_voltage.setAlignment(Qt.AlignCenter)
 
-        self.verticalLayout_8.addWidget(self.cell6_temperature)
+        self.verticalLayout_8.addWidget(self.cell6_voltage)
 
         self.cell6_soc = QLabel(self.cell6_frame)
         self.cell6_soc.setObjectName(u"cell6_soc")
@@ -681,12 +686,12 @@ class Ui_MainWindow(object):
 
         self.verticalLayout_12.addWidget(self.cell9_title)
 
-        self.cell9_temperature = QLabel(self.cell9_frame)
-        self.cell9_temperature.setObjectName(u"cell9_temperature")
-        self.cell9_temperature.setFont(font1)
-        self.cell9_temperature.setAlignment(Qt.AlignCenter)
+        self.cell9_voltage = QLabel(self.cell9_frame)
+        self.cell9_voltage.setObjectName(u"cell9_voltage")
+        self.cell9_voltage.setFont(font1)
+        self.cell9_voltage.setAlignment(Qt.AlignCenter)
 
-        self.verticalLayout_12.addWidget(self.cell9_temperature)
+        self.verticalLayout_12.addWidget(self.cell9_voltage)
 
         self.cell9_soc = QLabel(self.cell9_frame)
         self.cell9_soc.setObjectName(u"cell9_soc")
@@ -711,12 +716,12 @@ class Ui_MainWindow(object):
 
         self.verticalLayout_20.addWidget(self.cell17_title)
 
-        self.cell17_temperature = QLabel(self.cell17_frame)
-        self.cell17_temperature.setObjectName(u"cell17_temperature")
-        self.cell17_temperature.setFont(font1)
-        self.cell17_temperature.setAlignment(Qt.AlignCenter)
+        self.cell17_voltage = QLabel(self.cell17_frame)
+        self.cell17_voltage.setObjectName(u"cell17_voltage")
+        self.cell17_voltage.setFont(font1)
+        self.cell17_voltage.setAlignment(Qt.AlignCenter)
 
-        self.verticalLayout_20.addWidget(self.cell17_temperature)
+        self.verticalLayout_20.addWidget(self.cell17_voltage)
 
         self.cell17_soc = QLabel(self.cell17_frame)
         self.cell17_soc.setObjectName(u"cell17_soc")
@@ -741,12 +746,12 @@ class Ui_MainWindow(object):
 
         self.verticalLayout_21.addWidget(self.cell18_title)
 
-        self.cell18_temperature = QLabel(self.cell18_frame)
-        self.cell18_temperature.setObjectName(u"cell18_temperature")
-        self.cell18_temperature.setFont(font1)
-        self.cell18_temperature.setAlignment(Qt.AlignCenter)
+        self.cell18_voltage = QLabel(self.cell18_frame)
+        self.cell18_voltage.setObjectName(u"cell18_voltage")
+        self.cell18_voltage.setFont(font1)
+        self.cell18_voltage.setAlignment(Qt.AlignCenter)
 
-        self.verticalLayout_21.addWidget(self.cell18_temperature)
+        self.verticalLayout_21.addWidget(self.cell18_voltage)
 
         self.cell18_soc = QLabel(self.cell18_frame)
         self.cell18_soc.setObjectName(u"cell18_soc")
@@ -814,58 +819,58 @@ class Ui_MainWindow(object):
         self.diagnostic_btn.setText(QCoreApplication.translate("MainWindow", u"DIAGNOSTIC", None))
         self.settings_btn.setText(QCoreApplication.translate("MainWindow", u"SETTINGS", None))
         self.cell16_title.setText(QCoreApplication.translate("MainWindow", u"Cell 16", None))
-        self.cell16_temperature.setText(QCoreApplication.translate("MainWindow", u"indeterminate \u00baC", None))
+        self.cell16_voltage.setText(QCoreApplication.translate("MainWindow", u"indeterminate mV", None))
         self.cell16_soc.setText(QCoreApplication.translate("MainWindow", u"indeterminate %", None))
         self.cell2_title.setText(QCoreApplication.translate("MainWindow", u"Cell 2", None))
-        self.cell2_temperature.setText(QCoreApplication.translate("MainWindow", u"indeterminate \u00baC", None))
+        self.cell2_voltage.setText(QCoreApplication.translate("MainWindow", u"indeterminate mV", None))
         self.cell2_soc.setText(QCoreApplication.translate("MainWindow", u"indeterminate %", None))
         self.cell8_title.setText(QCoreApplication.translate("MainWindow", u"Cell 8", None))
-        self.cell8_temperature.setText(QCoreApplication.translate("MainWindow", u"indeterminate \u00baC", None))
+        self.cell8_voltage.setText(QCoreApplication.translate("MainWindow", u"indeterminate mV", None))
         self.cell8_soc.setText(QCoreApplication.translate("MainWindow", u"indeterminate %", None))
         self.cell7_title.setText(QCoreApplication.translate("MainWindow", u"Cell 7", None))
-        self.cell7_temperature.setText(QCoreApplication.translate("MainWindow", u"indeterminate \u00baC", None))
+        self.cell7_voltage.setText(QCoreApplication.translate("MainWindow", u"indeterminate mV", None))
         self.cell7_soc.setText(QCoreApplication.translate("MainWindow", u"indeterminate %", None))
         self.cell12_title.setText(QCoreApplication.translate("MainWindow", u"Cell 12", None))
-        self.cell12_temperature.setText(QCoreApplication.translate("MainWindow", u"indeterminate \u00baC", None))
+        self.cell12_voltage.setText(QCoreApplication.translate("MainWindow", u"indeterminate mV", None))
         self.cell12_soc.setText(QCoreApplication.translate("MainWindow", u"indeterminate %", None))
         self.cell1_title.setText(QCoreApplication.translate("MainWindow", u"Cell 1", None))
-        self.cell1_temperature.setText(QCoreApplication.translate("MainWindow", u"indeterminate \u00baC", None))
+        self.cell1_voltage.setText(QCoreApplication.translate("MainWindow", u"indeterminate mV", None))
         self.cell1_soc.setText(QCoreApplication.translate("MainWindow", u"indeterminate %", None))
         self.cell14_title.setText(QCoreApplication.translate("MainWindow", u"Cell 14", None))
-        self.cell14_temperature.setText(QCoreApplication.translate("MainWindow", u"indeterminate \u00baC", None))
+        self.cell14_voltage.setText(QCoreApplication.translate("MainWindow", u"indeterminate mV", None))
         self.cell14_soc.setText(QCoreApplication.translate("MainWindow", u"indeterminate %", None))
         self.cell15_title.setText(QCoreApplication.translate("MainWindow", u"Cell 15", None))
-        self.cell15_temperature.setText(QCoreApplication.translate("MainWindow", u"indeterminate \u00baC", None))
+        self.cell15_voltage.setText(QCoreApplication.translate("MainWindow", u"indeterminate mV", None))
         self.cell15_soc.setText(QCoreApplication.translate("MainWindow", u"indeterminate %", None))
         self.cell11_title.setText(QCoreApplication.translate("MainWindow", u"Cell 11", None))
-        self.cell11_temperature.setText(QCoreApplication.translate("MainWindow", u"indeterminate \u00baC", None))
+        self.cell11_voltage.setText(QCoreApplication.translate("MainWindow", u"indeterminate mV", None))
         self.cell11_soc.setText(QCoreApplication.translate("MainWindow", u"indeterminate %", None))
         self.cell10_title.setText(QCoreApplication.translate("MainWindow", u"Cell 10", None))
-        self.cell10_temperature.setText(QCoreApplication.translate("MainWindow", u"indeterminate \u00baC", None))
+        self.cell10_voltage.setText(QCoreApplication.translate("MainWindow", u"indeterminate mV", None))
         self.cell10_soc.setText(QCoreApplication.translate("MainWindow", u"indeterminate %", None))
         self.cell4_title.setText(QCoreApplication.translate("MainWindow", u"Cell 4", None))
-        self.cell4_temperature.setText(QCoreApplication.translate("MainWindow", u"indeterminate \u00baC", None))
+        self.cell4_voltage.setText(QCoreApplication.translate("MainWindow", u"indeterminate mV", None))
         self.cell4_soc.setText(QCoreApplication.translate("MainWindow", u"indeterminate %", None))
         self.cell3_title.setText(QCoreApplication.translate("MainWindow", u"Cell 3", None))
-        self.cell3_temperature.setText(QCoreApplication.translate("MainWindow", u"indeterminate \u00baC", None))
+        self.cell3_voltage.setText(QCoreApplication.translate("MainWindow", u"indeterminate mV", None))
         self.cell3_soc.setText(QCoreApplication.translate("MainWindow", u"indeterminate %", None))
         self.cell5_title.setText(QCoreApplication.translate("MainWindow", u"Cell 5", None))
-        self.cell5_temperature.setText(QCoreApplication.translate("MainWindow", u"indeterminate \u00baC", None))
+        self.cell5_voltage.setText(QCoreApplication.translate("MainWindow", u"indeterminate mV", None))
         self.cell5_soc.setText(QCoreApplication.translate("MainWindow", u"indeterminate %", None))
         self.cell13_title.setText(QCoreApplication.translate("MainWindow", u"Cell 13", None))
-        self.cell13_temperature.setText(QCoreApplication.translate("MainWindow", u"indeterminate \u00baC", None))
+        self.cell13_voltage.setText(QCoreApplication.translate("MainWindow", u"indeterminate mV", None))
         self.cell13_soc.setText(QCoreApplication.translate("MainWindow", u"indeterminate %", None))
         self.cell6_title.setText(QCoreApplication.translate("MainWindow", u"Cell 6", None))
-        self.cell6_temperature.setText(QCoreApplication.translate("MainWindow", u"indeterminate \u00baC", None))
+        self.cell6_voltage.setText(QCoreApplication.translate("MainWindow", u"indeterminate mV", None))
         self.cell6_soc.setText(QCoreApplication.translate("MainWindow", u"indeterminate %", None))
         self.cell9_title.setText(QCoreApplication.translate("MainWindow", u"Cell 9", None))
-        self.cell9_temperature.setText(QCoreApplication.translate("MainWindow", u"indeterminate \u00baC", None))
+        self.cell9_voltage.setText(QCoreApplication.translate("MainWindow", u"indeterminate mV", None))
         self.cell9_soc.setText(QCoreApplication.translate("MainWindow", u"indeterminate %", None))
         self.cell17_title.setText(QCoreApplication.translate("MainWindow", u"Cell 17", None))
-        self.cell17_temperature.setText(QCoreApplication.translate("MainWindow", u"indeterminate \u00baC", None))
+        self.cell17_voltage.setText(QCoreApplication.translate("MainWindow", u"indeterminate mV", None))
         self.cell17_soc.setText(QCoreApplication.translate("MainWindow", u"indeterminate %", None))
         self.cell18_title.setText(QCoreApplication.translate("MainWindow", u"Cell 18", None))
-        self.cell18_temperature.setText(QCoreApplication.translate("MainWindow", u"indeterminate \u00baC", None))
+        self.cell18_voltage.setText(QCoreApplication.translate("MainWindow", u"indeterminate mV", None))
         self.cell18_soc.setText(QCoreApplication.translate("MainWindow", u"indeterminate %", None))
         self.label_2.setText(QCoreApplication.translate("MainWindow", u"Diagnostic", None))
         self.label_3.setText(QCoreApplication.translate("MainWindow", u"Settings", None))

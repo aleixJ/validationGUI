@@ -3,6 +3,8 @@ from PySide6.QtWidgets import QApplication
 
 from .ui.frontPage import MyMainWindow
 
+import utils
+
 
 class gui_view:
     """
@@ -21,13 +23,18 @@ class gui_view:
         self.main_window.show()
         self.app.exec_()
 
-    def update_data(self, data: dict[str, dict[str, str]]) -> None:
+    def update_data(self, data: dict) -> None:
         """
         Update the data in the GUI
-        :param data: The data to update
+        :param data: The data to update (decoded CAN message)
         """
         for key, value in data.items():
-            if key == "cell_temperature":
-                for cell, temperature in value.items():
-                    self.main_window.update_cell_temperature(int(cell), temperature)
-            # Add more elif statements for other data types
+            base_name = utils.base_name(key)
+            if base_name.lower() == "cell_voltage":
+                # get the index of the cell (last part of the key)
+                index = int(key.split("_")[-1])
+                self.main_window.update_cell_voltatge(index, str(value))
+            if base_name.lower() == "cell_soc":
+                # get the index of the cell (last part of the key)
+                index = int(key.split("_")[-1])
+                self.main_window.update_cell_soc(index, str(value))

@@ -36,7 +36,7 @@ class can_model:
         self.bitrate = bitrate
         self.bus = self.create_can_bus()
         self.db = self.load_dbc_file(path="DBC/BMS_multiplex.dbc")
-        self.data = self.setup_data()
+        self.data = self.setup_data()  # Not used in version
         self.listeners = []
         # utils.print_data_structure(self.data)  # print the dictionary
 
@@ -109,8 +109,7 @@ class can_model:
 
         for message in self.db.messages:
             # Use regex to remove trailing numbers and underscores
-            base_name = re.sub(r"_\d+$", "", message.name)
-
+            base_name = utils.base_name(message.name)
             if base_name not in grouped_messages:
                 grouped_messages[base_name] = {}
             for signal in message.signals:
@@ -161,6 +160,7 @@ class can_model:
             decoded["timestamp"] = message.timestamp
             # save the data in self.data
             self.save_data(decoded)
+            self._notify_listeners(decoded)
             return decoded
         else:
             return None
@@ -181,12 +181,13 @@ class can_model:
         """
         self.listeners.append(listener)
 
-    def notify_listeners(self) -> None:
+    def _notify_listeners(self, data: dict) -> None:
         """
-        Notify all listeners
+        Notify all listeners.
+        :param data: The data to send to the listeners
         """
         for listener in self.listeners:
-            listener(self.data)
+            listener(data)
 
 
 if __name__ == "__main__":

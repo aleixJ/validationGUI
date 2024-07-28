@@ -447,14 +447,14 @@ QPushButton{
                     </widget>
                    </item>
                    <item>
-                    <widget class="QLabel" name="cell16_temperature">
+                    <widget class="QLabel" name="cell16_voltage">
                      <property name="font">
                       <font>
                        <pointsize>12</pointsize>
                       </font>
                      </property>
                      <property name="text">
-                      <string>indeterminate ºC</string>
+                      <string>indeterminate mV</string>
                      </property>
                      <property name="alignment">
                       <set>Qt::AlignCenter</set>
@@ -506,14 +506,14 @@ QPushButton{
                     </widget>
                    </item>
                    <item>
-                    <widget class="QLabel" name="cell2_temperature">
+                    <widget class="QLabel" name="cell2_voltage">
                      <property name="font">
                       <font>
                        <pointsize>12</pointsize>
                       </font>
                      </property>
                      <property name="text">
-                      <string>indeterminate ºC</string>
+                      <string>indeterminate mV</string>
                      </property>
                      <property name="alignment">
                       <set>Qt::AlignCenter</set>
@@ -565,14 +565,14 @@ QPushButton{
                     </widget>
                    </item>
                    <item>
-                    <widget class="QLabel" name="cell8_temperature">
+                    <widget class="QLabel" name="cell8_voltage">
                      <property name="font">
                       <font>
                        <pointsize>12</pointsize>
                       </font>
                      </property>
                      <property name="text">
-                      <string>indeterminate ºC</string>
+                      <string>indeterminate mV</string>
                      </property>
                      <property name="alignment">
                       <set>Qt::AlignCenter</set>
@@ -624,14 +624,14 @@ QPushButton{
                     </widget>
                    </item>
                    <item>
-                    <widget class="QLabel" name="cell7_temperature">
+                    <widget class="QLabel" name="cell7_voltage">
                      <property name="font">
                       <font>
                        <pointsize>12</pointsize>
                       </font>
                      </property>
                      <property name="text">
-                      <string>indeterminate ºC</string>
+                      <string>indeterminate mV</string>
                      </property>
                      <property name="alignment">
                       <set>Qt::AlignCenter</set>
@@ -683,14 +683,14 @@ QPushButton{
                     </widget>
                    </item>
                    <item>
-                    <widget class="QLabel" name="cell12_temperature">
+                    <widget class="QLabel" name="cell12_voltage">
                      <property name="font">
                       <font>
                        <pointsize>12</pointsize>
                       </font>
                      </property>
                      <property name="text">
-                      <string>indeterminate ºC</string>
+                      <string>indeterminate mV</string>
                      </property>
                      <property name="alignment">
                       <set>Qt::AlignCenter</set>
@@ -742,14 +742,14 @@ QPushButton{
                     </widget>
                    </item>
                    <item>
-                    <widget class="QLabel" name="cell1_temperature">
+                    <widget class="QLabel" name="cell1_voltage">
                      <property name="font">
                       <font>
                        <pointsize>12</pointsize>
                       </font>
                      </property>
                      <property name="text">
-                      <string>indeterminate ºC</string>
+                      <string>indeterminate mV</string>
                      </property>
                      <property name="alignment">
                       <set>Qt::AlignCenter</set>
@@ -801,14 +801,14 @@ QPushButton{
                     </widget>
                    </item>
                    <item>
-                    <widget class="QLabel" name="cell14_temperature">
+                    <widget class="QLabel" name="cell14_voltage">
                      <property name="font">
                       <font>
                        <pointsize>12</pointsize>
                       </font>
                      </property>
                      <property name="text">
-                      <string>indeterminate ºC</string>
+                      <string>indeterminate mV</string>
                      </property>
                      <property name="alignment">
                       <set>Qt::AlignCenter</set>
@@ -835,6 +835,9 @@ QPushButton{
                 </item>
                 <item row="3" column="2" alignment="Qt::AlignHCenter">
                  <widget class="QFrame" name="cell15_frame">
+                  <property name="styleSheet">
+                   <string notr="true"/>
+                  </property>
                   <property name="frameShape">
                    <enum>QFrame::StyledPanel</enum>
                   </property>
@@ -860,14 +863,14 @@ QPushButton{
                     </widget>
                    </item>
                    <item>
-                    <widget class="QLabel" name="cell15_temperature">
+                    <widget class="QLabel" name="cell15_voltage">
                      <property name="font">
                       <font>
                        <pointsize>12</pointsize>
                       </font>
                      </property>
                      <property name="text">
-                      <string>indeterminate ºC</string>
+                      <string>indeterminate mV</string>
                      </property>
                      <property name="alignment">
                       <set>Qt::AlignCenter</set>
@@ -919,14 +922,14 @@ QPushButton{
                     </widget>
                    </item>
                    <item>
-                    <widget class="QLabel" name="cell11_temperature">
+                    <widget class="QLabel" name="cell11_voltage">
                      <property name="font">
                       <font>
                        <pointsize>12</pointsize>
                       </font>
                      </property>
                      <property name="text">
-                      <string>indeterminate ºC</string>
+                      <string>indeterminate mV</string>
                      </property>
                      <property name="alignment">
                       <set>Qt::AlignCenter</set>
@@ -978,14 +981,14 @@ QPushButton{
                     </widget>
                    </item>
                    <item>
-                    <widget class="QLabel" name="cell10_temperature">
+                    <widget class="QLabel" name="cell10_voltage">
                      <property name="font">
                       <font>
                        <pointsize>12</pointsize>
                       </font>
                      </property>
                      <property name="text">
-                      <string>indeterminate ºC</string>
+                      <string>indeterminate mV</string>
                      </property>
                      <property name="alignment">
                       <set>Qt::AlignCenter</set>
@@ -1037,14 +1040,14 @@ QPushButton{
                     </widget>
                    </item>
                    <item>
-                    <widget class="QLabel" name="cell4_temperature">
+                    <widget class="QLabel" name="cell4_voltage">
                      <property name="font">
                       <font>
                        <pointsize>12</pointsize>
                       </font>
                      </property>
                      <property name="text">
-                      <string>indeterminate ºC</string>
+                      <string>indeterminate mV</string>
                      </property>
                      <property name="alignment">
                       <set>Qt::AlignCenter</set>
@@ -1096,14 +1099,14 @@ QPushButton{
                     </widget>
                    </item>
                    <item>
-                    <widget class="QLabel" name="cell3_temperature">
+                    <widget class="QLabel" name="cell3_voltage">
                      <property name="font">
                       <font>
                        <pointsize>12</pointsize>
                       </font>
                      </property>
                      <property name="text">
-                      <string>indeterminate ºC</string>
+                      <string>indeterminate mV</string>
                      </property>
                      <property name="alignment">
                       <set>Qt::AlignCenter</set>
@@ -1155,14 +1158,14 @@ QPushButton{
                     </widget>
                    </item>
                    <item>
-                    <widget class="QLabel" name="cell5_temperature">
+                    <widget class="QLabel" name="cell5_voltage">
                      <property name="font">
                       <font>
                        <pointsize>12</pointsize>
                       </font>
                      </property>
                      <property name="text">
-                      <string>indeterminate ºC</string>
+                      <string>indeterminate mV</string>
                      </property>
                      <property name="alignment">
                       <set>Qt::AlignCenter</set>
@@ -1189,6 +1192,14 @@ QPushButton{
                 </item>
                 <item row="3" column="0" alignment="Qt::AlignHCenter">
                  <widget class="QFrame" name="cell13_frame">
+                  <property name="font">
+                   <font>
+                    <strikeout>false</strikeout>
+                   </font>
+                  </property>
+                  <property name="autoFillBackground">
+                   <bool>false</bool>
+                  </property>
                   <property name="frameShape">
                    <enum>QFrame::StyledPanel</enum>
                   </property>
@@ -1214,14 +1225,14 @@ QPushButton{
                     </widget>
                    </item>
                    <item>
-                    <widget class="QLabel" name="cell13_temperature">
+                    <widget class="QLabel" name="cell13_voltage">
                      <property name="font">
                       <font>
                        <pointsize>12</pointsize>
                       </font>
                      </property>
                      <property name="text">
-                      <string>indeterminate ºC</string>
+                      <string>indeterminate mV</string>
                      </property>
                      <property name="alignment">
                       <set>Qt::AlignCenter</set>
@@ -1273,14 +1284,14 @@ QPushButton{
                     </widget>
                    </item>
                    <item>
-                    <widget class="QLabel" name="cell6_temperature">
+                    <widget class="QLabel" name="cell6_voltage">
                      <property name="font">
                       <font>
                        <pointsize>12</pointsize>
                       </font>
                      </property>
                      <property name="text">
-                      <string>indeterminate ºC</string>
+                      <string>indeterminate mV</string>
                      </property>
                      <property name="alignment">
                       <set>Qt::AlignCenter</set>
@@ -1332,14 +1343,14 @@ QPushButton{
                     </widget>
                    </item>
                    <item>
-                    <widget class="QLabel" name="cell9_temperature">
+                    <widget class="QLabel" name="cell9_voltage">
                      <property name="font">
                       <font>
                        <pointsize>12</pointsize>
                       </font>
                      </property>
                      <property name="text">
-                      <string>indeterminate ºC</string>
+                      <string>indeterminate mV</string>
                      </property>
                      <property name="alignment">
                       <set>Qt::AlignCenter</set>
@@ -1391,14 +1402,14 @@ QPushButton{
                     </widget>
                    </item>
                    <item>
-                    <widget class="QLabel" name="cell17_temperature">
+                    <widget class="QLabel" name="cell17_voltage">
                      <property name="font">
                       <font>
                        <pointsize>12</pointsize>
                       </font>
                      </property>
                      <property name="text">
-                      <string>indeterminate ºC</string>
+                      <string>indeterminate mV</string>
                      </property>
                      <property name="alignment">
                       <set>Qt::AlignCenter</set>
@@ -1450,14 +1461,14 @@ QPushButton{
                     </widget>
                    </item>
                    <item>
-                    <widget class="QLabel" name="cell18_temperature">
+                    <widget class="QLabel" name="cell18_voltage">
                      <property name="font">
                       <font>
                        <pointsize>12</pointsize>
                       </font>
                      </property>
                      <property name="text">
-                      <string>indeterminate ºC</string>
+                      <string>indeterminate mV</string>
                      </property>
                      <property name="alignment">
                       <set>Qt::AlignCenter</set>
