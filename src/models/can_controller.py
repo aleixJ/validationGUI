@@ -1,7 +1,12 @@
 import can
 import cantools
 import re
+import sys
+
+# include the path for the utils.py file (if this file is executed directly)
+sys.path.append("src")
 import utils
+
 from typing import Union
 from typing import Any
 from collections import deque

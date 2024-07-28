@@ -1,13 +1,11 @@
 import sys
-
 from PySide6.QtWidgets import QApplication
 
-sys.path.append("interface")
-from interface.frontPage import MySideBar
+from .ui.frontPage import MyMainWindow
 
 
-if __name__ == "__main__":
+def start_gui():
     app = QApplication(sys.argv)
-    window = MySideBar()
+    window = MyMainWindow()
     window.show()
     app.exec_()

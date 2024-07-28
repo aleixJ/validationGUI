@@ -1,6 +1,10 @@
-import can_controller
+import sys
+import models.can_controller as can_controller
 import plot
 import threading
+
+import views.gui as gui
+from pathlib import Path
 
 
 def receive_messages(controller):
@@ -17,9 +21,9 @@ def main():
         receive_thread = threading.Thread(target=receive_messages, args=(controller,))
         receive_thread.daemon = True
         receive_thread.start()
-        # Start the plotting
-        plot.plotBMS(controller).show()
 
+        # Start the GUI
+        gui.start_gui()
     except KeyboardInterrupt:
         del controller
 

@@ -37,6 +37,6 @@
 The file interface.ui is the Qt Designer file. It can be opened with the Qt Designer tool to modify the interface.
 When the file is modified, it must be converted to a Python file using the following command:
 ```bash
-pyside6-uic ui_interface.ui -o ui_interface.py
+pyside6-uic ui_index.ui -o ui_index.py
 ```
 
