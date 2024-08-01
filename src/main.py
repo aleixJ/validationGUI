@@ -14,12 +14,24 @@ def main():
     try:
         # Create a new can_model object
         can_m = can_model()
+
         # Create a new gui_view object
         gui_v = gui_view()
+        gui_v.show_settings(can_m.list_available_interfaces())
+
+        # Wait for the settings to be accepted
+        while gui_v.get_interface_selected() is None:
+            gui_v.app.processEvents()
+
+        # Set the interface and channel
+        can_m.set_interface(gui_v.get_interface_selected()["interface"])
+        can_m.set_channel(gui_v.get_interface_selected()["channel"])
+
+        # Create a new CAN bus
+        can_m.create_can_bus()
 
         # Add the gui_view object as a listener to the can_model object
         can_m.add_listener(gui_v.update_data)
-
         # Start the thread to receive CAN messages
         receive_thread = threading.Thread(target=receive_messages, args=(can_m,))
         receive_thread.daemon = True

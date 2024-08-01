@@ -34,7 +34,7 @@ class can_model:
         self.channel = channel
         self.interface = interface
         self.bitrate = bitrate
-        self.bus = self.create_can_bus()
+        self.bus = None  # Wait the settings to create the bus
         self.db = self.load_dbc_file(path="DBC/BMS_multiplex.dbc")
         self.data = self.setup_data()  # Not used in version
         self.listeners = []
@@ -42,7 +42,8 @@ class can_model:
 
     # Destructor
     def __del__(self):
-        self.bus.shutdown()
+        if self.bus is not None:
+            self.bus.shutdown()
 
     def list_available_interfaces(self) -> list[dict[str, Union[str, int]]]:
         """
@@ -83,11 +84,11 @@ class can_model:
         ]:
             self.channel = channel
 
-    def create_can_bus(self) -> can.BusABC:
+    def create_can_bus(self) -> None:
         """
         Create a new CAN bus
         """
-        return can.interface.Bus(
+        self.bus = can.interface.Bus(
             channel=self.channel, interface=self.interface, bitrate=self.bitrate
         )
 
@@ -97,6 +98,13 @@ class can_model:
         :param dbc_file_path: The path to the DBC file
         """
         return cantools.db.load_file(path)
+
+    def get_interface_and_channel(self) -> dict[str, Union[str, int]]:
+        """
+        Get the interface and channel
+        :return: The interface and channel
+        """
+        return {"interface": self.interface, "channel": self.channel}
 
     def setup_data(
         self,
@@ -154,7 +162,10 @@ class can_model:
         Receive a CAN message. When a message is received, decode it, save the data in memory and return it.
         :return: The received CAN message decoded into a dictionary of signal values
         """
-        message: can.Message | None = self.bus.recv()
+        if self.bus is not None:
+            message: can.Message | None = self.bus.recv()
+        else:
+            message = None
         if message is not None:
             decoded = self.decode_message(message)
             decoded["timestamp"] = message.timestamp
