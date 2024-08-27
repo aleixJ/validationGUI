@@ -51,6 +51,11 @@ class Ui_MainWindow(object):
 "#main_screen{\n"
 "	background-color: #071e26;\n"
 "	border-radius: 10px;\n"
+"}\n"
+"\n"
+"#diagnostic_list{\n"
+"	background-color: #0a2d3a;\n"
+"	border-radius: 10px;\n"
 "}")
         MainWindow.setDockNestingEnabled(False)
         self.centralwidget = QWidget(MainWindow)
@@ -213,8 +218,10 @@ class Ui_MainWindow(object):
         self.gridLayout_4 = QGridLayout(self.dashboard)
         self.gridLayout_4.setObjectName(u"gridLayout_4")
         self.grid_dashboard = QGridLayout()
-        self.grid_dashboard.setSpacing(0)
         self.grid_dashboard.setObjectName(u"grid_dashboard")
+        self.grid_dashboard.setHorizontalSpacing(10)
+        self.grid_dashboard.setVerticalSpacing(25)
+        self.grid_dashboard.setContentsMargins(0, -1, -1, -1)
         self.cell16_frame = QFrame(self.dashboard)
         self.cell16_frame.setObjectName(u"cell16_frame")
         self.cell16_frame.setFrameShape(QFrame.StyledPanel)
@@ -769,15 +776,8 @@ class Ui_MainWindow(object):
         self.stackedWidget.addWidget(self.dashboard)
         self.diagnostic = QWidget()
         self.diagnostic.setObjectName(u"diagnostic")
-        self.verticalLayout = QVBoxLayout(self.diagnostic)
-        self.verticalLayout.setObjectName(u"verticalLayout")
-        self.label_2 = QLabel(self.diagnostic)
-        self.label_2.setObjectName(u"label_2")
-        self.label_2.setFont(font1)
-        self.label_2.setAlignment(Qt.AlignCenter)
-
-        self.verticalLayout.addWidget(self.label_2)
-
+        self.horizontalLayout_7 = QHBoxLayout(self.diagnostic)
+        self.horizontalLayout_7.setObjectName(u"horizontalLayout_7")
         self.stackedWidget.addWidget(self.diagnostic)
         self.settings = QWidget()
         self.settings.setObjectName(u"settings")
@@ -872,7 +872,6 @@ class Ui_MainWindow(object):
         self.cell18_title.setText(QCoreApplication.translate("MainWindow", u"Cell 18", None))
         self.cell18_voltage.setText(QCoreApplication.translate("MainWindow", u"indeterminate mV", None))
         self.cell18_soc.setText(QCoreApplication.translate("MainWindow", u"indeterminate %", None))
-        self.label_2.setText(QCoreApplication.translate("MainWindow", u"Diagnostic", None))
         self.label_3.setText(QCoreApplication.translate("MainWindow", u"Settings", None))
     # retranslateUi
 

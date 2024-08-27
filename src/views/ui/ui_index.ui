@@ -49,6 +49,11 @@ QPushButton{
 #main_screen{
 	background-color: #071e26;
 	border-radius: 10px;
+}
+
+#diagnostic_list{
+	background-color: #0a2d3a;
+	border-radius: 10px;
 }</string>
   </property>
   <property name="dockNestingEnabled">
@@ -417,8 +422,14 @@ QPushButton{
              <layout class="QGridLayout" name="gridLayout_4">
               <item row="0" column="0">
                <layout class="QGridLayout" name="grid_dashboard">
-                <property name="spacing">
+                <property name="leftMargin">
                  <number>0</number>
+                </property>
+                <property name="horizontalSpacing">
+                 <number>10</number>
+                </property>
+                <property name="verticalSpacing">
+                 <number>25</number>
                 </property>
                 <item row="3" column="3" alignment="Qt::AlignHCenter">
                  <widget class="QFrame" name="cell16_frame">
@@ -1498,23 +1509,7 @@ QPushButton{
              </layout>
             </widget>
             <widget class="QWidget" name="diagnostic">
-             <layout class="QVBoxLayout" name="verticalLayout">
-              <item>
-               <widget class="QLabel" name="label_2">
-                <property name="font">
-                 <font>
-                  <pointsize>12</pointsize>
-                 </font>
-                </property>
-                <property name="text">
-                 <string>Diagnostic</string>
-                </property>
-                <property name="alignment">
-                 <set>Qt::AlignCenter</set>
-                </property>
-               </widget>
-              </item>
-             </layout>
+             <layout class="QHBoxLayout" name="horizontalLayout_7"/>
             </widget>
             <widget class="QWidget" name="settings">
              <layout class="QVBoxLayout" name="verticalLayout_4">
