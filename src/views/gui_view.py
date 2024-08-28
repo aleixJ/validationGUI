@@ -45,16 +45,21 @@ class gui_view:
         Update the data in the GUI
         :param data: The data to update (decoded CAN message)
         """
-        for key, value in data.items():
-            base_name = utils.base_name(key)
-            if base_name.lower() == "cell_voltage":
-                # get the index of the cell (last part of the key)
-                index = int(key.split("_")[-1])
-                self.main_window.update_cell_voltatge(index, str(value))
-            if base_name.lower() == "cell_soc":
-                # get the index of the cell (last part of the key)
-                index = int(key.split("_")[-1])
-                self.main_window.update_cell_soc(index, str(value))
+        decoded_data = data["decoded_message"]
+        if data["message_name"].lower() == "diagnostic_message":
+            self.main_window.update_diagnostic_message(decoded_data)
+        else:
+            for key, value in decoded_data.items():
+                base_name = utils.base_name(key)
+                # Update the dashboard
+                if base_name.lower() == "cell_voltage":
+                    # get the index of the cell (last part of the key)
+                    index = int(key.split("_")[-1])
+                    self.main_window.update_cell_voltatge(index, str(value))
+                if base_name.lower() == "cell_soc":
+                    # get the index of the cell (last part of the key)
+                    index = int(key.split("_")[-1])
+                    self.main_window.update_cell_soc(index, str(value))
 
     def on_settings_accepted(self, interface: dict[str, Union[str, int]]) -> None:
         """

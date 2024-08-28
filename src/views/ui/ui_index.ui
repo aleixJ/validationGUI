@@ -51,9 +51,14 @@ QPushButton{
 	border-radius: 10px;
 }
 
-#diagnostic_list{
-	background-color: #0a2d3a;
-	border-radius: 10px;
+QTableCornerButton::section {
+    background-color: #8b8d8e;
+}
+
+QHeaderView::section {
+    color: white;
+    background-color: #747678;
+    gridline-color: #747678;
 }</string>
   </property>
   <property name="dockNestingEnabled">
@@ -1509,7 +1514,91 @@ QPushButton{
              </layout>
             </widget>
             <widget class="QWidget" name="diagnostic">
-             <layout class="QHBoxLayout" name="horizontalLayout_7"/>
+             <layout class="QVBoxLayout" name="verticalLayout">
+              <item>
+               <widget class="QTableWidget" name="diagnostic_table">
+                <property name="font">
+                 <font>
+                  <pointsize>14</pointsize>
+                 </font>
+                </property>
+                <property name="contextMenuPolicy">
+                 <enum>Qt::DefaultContextMenu</enum>
+                </property>
+                <property name="layoutDirection">
+                 <enum>Qt::LeftToRight</enum>
+                </property>
+                <property name="autoFillBackground">
+                 <bool>false</bool>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true"/>
+                </property>
+                <property name="lineWidth">
+                 <number>1</number>
+                </property>
+                <property name="sizeAdjustPolicy">
+                 <enum>QAbstractScrollArea::AdjustToContents</enum>
+                </property>
+                <property name="autoScroll">
+                 <bool>true</bool>
+                </property>
+                <property name="alternatingRowColors">
+                 <bool>false</bool>
+                </property>
+                <property name="iconSize">
+                 <size>
+                  <width>0</width>
+                  <height>0</height>
+                 </size>
+                </property>
+                <property name="showGrid">
+                 <bool>true</bool>
+                </property>
+                <property name="gridStyle">
+                 <enum>Qt::SolidLine</enum>
+                </property>
+                <property name="sortingEnabled">
+                 <bool>true</bool>
+                </property>
+                <property name="rowCount">
+                 <number>0</number>
+                </property>
+                <attribute name="horizontalHeaderCascadingSectionResizes">
+                 <bool>false</bool>
+                </attribute>
+                <attribute name="horizontalHeaderDefaultSectionSize">
+                 <number>150</number>
+                </attribute>
+                <attribute name="verticalHeaderVisible">
+                 <bool>false</bool>
+                </attribute>
+                <attribute name="verticalHeaderShowSortIndicator" stdset="0">
+                 <bool>true</bool>
+                </attribute>
+                <column>
+                 <property name="text">
+                  <string>Timestamp</string>
+                 </property>
+                </column>
+                <column>
+                 <property name="text">
+                  <string>Diagnostic code</string>
+                 </property>
+                </column>
+                <column>
+                 <property name="text">
+                  <string>Fault class</string>
+                 </property>
+                </column>
+                <column>
+                 <property name="text">
+                  <string>Cell/NTC number</string>
+                 </property>
+                </column>
+               </widget>
+              </item>
+             </layout>
             </widget>
             <widget class="QWidget" name="settings">
              <layout class="QVBoxLayout" name="verticalLayout_4">

@@ -2,6 +2,7 @@ import re
 from typing import Union
 from typing import Any
 from collections import deque
+from datetime import datetime
 
 
 def print_data_structure(
@@ -41,3 +42,13 @@ def base_name(message: str) -> str:
     :return: The base name
     """
     return re.sub(r"_\d+$", "", message)
+
+
+def date_from_timestamp(timestamp: float) -> str:
+    """
+    Convert a timestamp to a date and time string.
+    Format: dd/mm/yyyy hh:mm:ss
+    :param timestamp: The timestamp
+    :return: string with the date and time
+    """
+    return datetime.fromtimestamp(timestamp).strftime("%d/%m/%Y %H:%M:%S")

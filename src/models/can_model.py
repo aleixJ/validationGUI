@@ -130,14 +130,16 @@ class can_model:
 
         return grouped_messages
 
-    def decode_message(self, message: can.Message) -> dict[str, Any]:
+    def decode_message(self, message: can.Message) -> tuple[dict[str, Any], str]:
         """
         Decode a CAN message
         :param message: The CAN message to decode
-        :return: A dictionary of signal values
+        :return: The decoded message and the message name
         """
         # decoded have this structe: {'Cell_Voltage_5': 3735, 'Cell_Voltage_6': 4036, 'Cell_Voltage_7': 4024, 'Cell_Voltage_8': 3274, 'timestamp': 1721699728.707768}
-        return self.db.decode_message(message.arbitration_id, message.data)
+        decoded_message = self.db.decode_message(message.arbitration_id, message.data)
+        message_name = self.db.get_message_by_frame_id(message.arbitration_id).name
+        return decoded_message, message_name
 
     def save_data(self, message: dict[str, Any]) -> None:
         """
@@ -167,11 +169,14 @@ class can_model:
         else:
             message = None
         if message is not None:
-            decoded = self.decode_message(message)
+            decoded, message_name = self.decode_message(message)
             decoded["timestamp"] = message.timestamp
             # save the data in self.data
             self.save_data(decoded)
-            self._notify_listeners(decoded)
+            # notify the listeners. Return the decoded message and the message name as a dictionary. Decoded message is a dictionary of signal values.
+            self._notify_listeners(
+                {"decoded_message": decoded, "message_name": message_name}
+            )
             return decoded
         else:
             return None
@@ -192,7 +197,7 @@ class can_model:
         """
         self.listeners.append(listener)
 
-    def _notify_listeners(self, data: dict) -> None:
+    def _notify_listeners(self, data: dict[str, Any]) -> None:
         """
         Notify all listeners.
         :param data: The data to send to the listeners

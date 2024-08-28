@@ -15,9 +15,10 @@ from PySide6.QtGui import (QBrush, QColor, QConicalGradient, QCursor,
     QFont, QFontDatabase, QGradient, QIcon,
     QImage, QKeySequence, QLinearGradient, QPainter,
     QPalette, QPixmap, QRadialGradient, QTransform)
-from PySide6.QtWidgets import (QApplication, QFrame, QGridLayout, QHBoxLayout,
-    QLabel, QMainWindow, QPushButton, QSizePolicy,
-    QStackedWidget, QVBoxLayout, QWidget)
+from PySide6.QtWidgets import (QAbstractScrollArea, QApplication, QFrame, QGridLayout,
+    QHBoxLayout, QHeaderView, QLabel, QMainWindow,
+    QPushButton, QSizePolicy, QStackedWidget, QTableWidget,
+    QTableWidgetItem, QVBoxLayout, QWidget)
 
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
@@ -53,9 +54,14 @@ class Ui_MainWindow(object):
 "	border-radius: 10px;\n"
 "}\n"
 "\n"
-"#diagnostic_list{\n"
-"	background-color: #0a2d3a;\n"
-"	border-radius: 10px;\n"
+"QTableCornerButton::section {\n"
+"    background-color: #8b8d8e;\n"
+"}\n"
+"\n"
+"QHeaderView::section {\n"
+"    color: white;\n"
+"    background-color: #747678;\n"
+"    gridline-color: #747678;\n"
 "}")
         MainWindow.setDockNestingEnabled(False)
         self.centralwidget = QWidget(MainWindow)
@@ -776,8 +782,43 @@ class Ui_MainWindow(object):
         self.stackedWidget.addWidget(self.dashboard)
         self.diagnostic = QWidget()
         self.diagnostic.setObjectName(u"diagnostic")
-        self.horizontalLayout_7 = QHBoxLayout(self.diagnostic)
-        self.horizontalLayout_7.setObjectName(u"horizontalLayout_7")
+        self.verticalLayout = QVBoxLayout(self.diagnostic)
+        self.verticalLayout.setObjectName(u"verticalLayout")
+        self.diagnostic_table = QTableWidget(self.diagnostic)
+        if (self.diagnostic_table.columnCount() < 4):
+            self.diagnostic_table.setColumnCount(4)
+        __qtablewidgetitem = QTableWidgetItem()
+        self.diagnostic_table.setHorizontalHeaderItem(0, __qtablewidgetitem)
+        __qtablewidgetitem1 = QTableWidgetItem()
+        self.diagnostic_table.setHorizontalHeaderItem(1, __qtablewidgetitem1)
+        __qtablewidgetitem2 = QTableWidgetItem()
+        self.diagnostic_table.setHorizontalHeaderItem(2, __qtablewidgetitem2)
+        __qtablewidgetitem3 = QTableWidgetItem()
+        self.diagnostic_table.setHorizontalHeaderItem(3, __qtablewidgetitem3)
+        self.diagnostic_table.setObjectName(u"diagnostic_table")
+        font7 = QFont()
+        font7.setPointSize(14)
+        self.diagnostic_table.setFont(font7)
+        self.diagnostic_table.setContextMenuPolicy(Qt.DefaultContextMenu)
+        self.diagnostic_table.setLayoutDirection(Qt.LeftToRight)
+        self.diagnostic_table.setAutoFillBackground(False)
+        self.diagnostic_table.setStyleSheet(u"")
+        self.diagnostic_table.setLineWidth(1)
+        self.diagnostic_table.setSizeAdjustPolicy(QAbstractScrollArea.AdjustToContents)
+        self.diagnostic_table.setAutoScroll(True)
+        self.diagnostic_table.setAlternatingRowColors(False)
+        self.diagnostic_table.setIconSize(QSize(0, 0))
+        self.diagnostic_table.setShowGrid(True)
+        self.diagnostic_table.setGridStyle(Qt.SolidLine)
+        self.diagnostic_table.setSortingEnabled(True)
+        self.diagnostic_table.setRowCount(0)
+        self.diagnostic_table.horizontalHeader().setCascadingSectionResizes(False)
+        self.diagnostic_table.horizontalHeader().setDefaultSectionSize(150)
+        self.diagnostic_table.verticalHeader().setVisible(False)
+        self.diagnostic_table.verticalHeader().setProperty("showSortIndicator", True)
+
+        self.verticalLayout.addWidget(self.diagnostic_table)
+
         self.stackedWidget.addWidget(self.diagnostic)
         self.settings = QWidget()
         self.settings.setObjectName(u"settings")
@@ -872,6 +913,14 @@ class Ui_MainWindow(object):
         self.cell18_title.setText(QCoreApplication.translate("MainWindow", u"Cell 18", None))
         self.cell18_voltage.setText(QCoreApplication.translate("MainWindow", u"indeterminate mV", None))
         self.cell18_soc.setText(QCoreApplication.translate("MainWindow", u"indeterminate %", None))
+        ___qtablewidgetitem = self.diagnostic_table.horizontalHeaderItem(0)
+        ___qtablewidgetitem.setText(QCoreApplication.translate("MainWindow", u"Timestamp", None));
+        ___qtablewidgetitem1 = self.diagnostic_table.horizontalHeaderItem(1)
+        ___qtablewidgetitem1.setText(QCoreApplication.translate("MainWindow", u"Diagnostic code", None));
+        ___qtablewidgetitem2 = self.diagnostic_table.horizontalHeaderItem(2)
+        ___qtablewidgetitem2.setText(QCoreApplication.translate("MainWindow", u"Fault class", None));
+        ___qtablewidgetitem3 = self.diagnostic_table.horizontalHeaderItem(3)
+        ___qtablewidgetitem3.setText(QCoreApplication.translate("MainWindow", u"Cell/NTC number", None));
         self.label_3.setText(QCoreApplication.translate("MainWindow", u"Settings", None))
     # retranslateUi
 
