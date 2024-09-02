@@ -76,7 +76,6 @@ class MyMainWindow(QMainWindow, Ui_MainWindow):
         Diag_Code is a multiplexor. 0x0: Not_Cell_NTC, 0x1: Cell_Num, 0x2: NTC_Num
         :param message: The diagnostic message
         """
-        print(message)
         # Temporarily disable sorting
         self.diagnostic_table.setSortingEnabled(False)
 

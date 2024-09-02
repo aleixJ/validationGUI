@@ -1,5 +1,6 @@
 import sys
 from PySide6.QtWidgets import QApplication
+from PySide6.QtCore import Signal, QObject
 
 from .ui.frontPage import MyMainWindow
 from .ui.settingsPage import MySettingsWindow
@@ -8,6 +9,10 @@ import utils
 
 from typing import Union
 from typing import Any
+
+
+class GuiSignals(QObject):
+    update_data_signal = Signal(dict)
 
 
 class gui_view:
@@ -21,6 +26,9 @@ class gui_view:
         self.settings_window = MySettingsWindow()
         self.main_window = MyMainWindow()
         self.interface_selected = None
+
+        self.signals = GuiSignals()
+        self.signals.update_data_signal.connect(self.update_data)
 
         # Connect the settings accepted signal to a slot
         self.settings_window.settings_accepted.connect(self.on_settings_accepted)

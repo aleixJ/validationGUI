@@ -177,9 +177,6 @@ class can_model:
             self._notify_listeners(
                 {"decoded_message": decoded, "message_name": message_name}
             )
-            return decoded
-        else:
-            return None
 
     def parse_database(self) -> None:
         """
@@ -204,11 +201,3 @@ class can_model:
         """
         for listener in self.listeners:
             listener(data)
-
-
-if __name__ == "__main__":
-    temp = can_model()
-    while True:
-        message = temp.receive_can_message()
-        if message is not None:
-            print(message)

@@ -5,12 +5,16 @@ from models.can_model import can_model
 from views.gui_view import gui_view
 
 
+running = True
+
+
 def receive_messages(controller: can_model) -> None:
-    while True:
+    while running:
         controller.receive_can_message()
 
 
 def main():
+    global running
     try:
         # Create a new can_model object
         can_m = can_model()
@@ -31,7 +35,8 @@ def main():
         can_m.create_can_bus()
 
         # Add the gui_view object as a listener to the can_model object
-        can_m.add_listener(gui_v.update_data)
+        can_m.add_listener(lambda data: gui_v.signals.update_data_signal.emit(data))
+
         # Start the thread to receive CAN messages
         receive_thread = threading.Thread(target=receive_messages, args=(can_m,))
         receive_thread.daemon = True
@@ -40,6 +45,7 @@ def main():
         # Start the GUI
         gui_v.show()
     except KeyboardInterrupt:
+        running = False
         if can_m is not None:
             del can_m
 
