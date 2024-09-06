@@ -2,6 +2,7 @@ from PySide6.QtWidgets import QMainWindow, QMenu, QLabel, QFrame, QTableWidgetIt
 from PySide6.QtGui import QAction, QFont
 from PySide6.QtCore import Qt
 import utils
+import time
 
 from .ui_index import Ui_MainWindow
 
@@ -78,6 +79,10 @@ class MyMainWindow(QMainWindow, Ui_MainWindow):
         """
         # Temporarily disable sorting
         self.diagnostic_table.setSortingEnabled(False)
+        
+        # if the table have more than X rows, remove the last one
+        if self.diagnostic_table.rowCount() > 500:
+            self.diagnostic_table.removeRow(self.diagnostic_table.rowCount() - 1)
 
         # Add the message to the table. The timestamp is a new row and the rest of the data is an item
         # the row is the timestamp in dd/mm/yyyy hh:mm:ss format
@@ -85,7 +90,7 @@ class MyMainWindow(QMainWindow, Ui_MainWindow):
         self.diagnostic_table.insertRow(row)
 
         self.diagnostic_table.setItem(
-            row, 0, QTableWidgetItem(utils.date_from_timestamp(message["timestamp"]))
+            row, 0, QTableWidgetItem(utils.date_from_timestamp(time.time()))
         )
         self.diagnostic_table.setItem(
             row, 1, QTableWidgetItem(str(message["Diag_Code"]))
