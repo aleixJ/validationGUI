@@ -1,8 +1,10 @@
-from PySide6.QtWidgets import QMainWindow, QMenu, QLabel, QFrame, QTableWidgetItem
-from PySide6.QtGui import QAction, QFont
+from PySide6.QtWidgets import QMainWindow, QMenu, QLabel, QFrame, QTableWidgetItem, QFileDialog
+from PySide6.QtGui import QAction, QFont, QColor
 from PySide6.QtCore import Qt
 import utils
 import time
+
+import csv
 
 from .ui_index import Ui_MainWindow
 
@@ -18,10 +20,14 @@ class MyMainWindow(QMainWindow, Ui_MainWindow):
         self.setWindowTitle("Validation BMS")
 
         # Connect buttons to switch pages
-
         self.dashboard_btn.clicked.connect(self.switch_to_dashboard)
         self.diagnostic_btn.clicked.connect(self.switch_to_diagnostic)
         self.settings_btn.clicked.connect(self.switch_to_settings)
+        
+        # Connect the diagnostic page.
+        self.pause_diagnostic_btn.clicked.connect(self.change_color_pause_diagnostic)
+        self.clear_diagnostic_btn.clicked.connect(self.clear_diagnostic_table)
+        self.save_diagnostic_btn.clicked.connect(self.save_diagnostic_table)
 
     def resize_dashboard(self):
         """
@@ -50,6 +56,36 @@ class MyMainWindow(QMainWindow, Ui_MainWindow):
 
     def switch_to_settings(self):
         self.stackedWidget.setCurrentIndex(2)
+        
+    def change_color_pause_diagnostic(self):
+        if self.pause_diagnostic_btn.isChecked():
+            self.pause_diagnostic_btn.setStyleSheet("color: red")
+        else:
+            self.pause_diagnostic_btn.setStyleSheet("color: green")
+            
+    def clear_diagnostic_table(self):
+        self.diagnostic_table.setRowCount(0)
+        
+    def save_diagnostic_table(self):
+        # Get the current time and format it as YYYY-MM-DD--HH-MM-SS
+        default_name = time.strftime("%Y-%m-%d--%H-%M-%S")
+        
+        # Open a file dialog to select the file path and name
+        file_path, _ = QFileDialog.getSaveFileName(self, "Save Diagnostic Table", f"{default_name}.csv", "CSV Files (*.csv)")
+        
+        if file_path:
+            # Open the file in write mode
+            with open(file_path, 'w', newline='') as file:
+                writer = csv.writer(file)
+                
+                # Write the header
+                headers = [self.diagnostic_table.horizontalHeaderItem(i).text() for i in range(self.diagnostic_table.columnCount())]
+                writer.writerow(headers)
+                
+                # Write the table data
+                for row in range(self.diagnostic_table.rowCount()):
+                    row_data = [self.diagnostic_table.item(row, column).text() if self.diagnostic_table.item(row, column) else '' for column in range(self.diagnostic_table.columnCount())]
+                    writer.writerow(row_data)
 
     def update_cell_voltatge(self, index: int, voltatge: str):
         """
@@ -77,6 +113,21 @@ class MyMainWindow(QMainWindow, Ui_MainWindow):
         Diag_Code is a multiplexor. 0x0: Not_Cell_NTC, 0x1: Cell_Num, 0x2: NTC_Num
         :param message: The diagnostic message
         """
+        # check if the table is paused
+        if self.pause_diagnostic_btn.isChecked():
+            return
+        
+        # Check the Fault_Class and set the color
+        fault_class = str(message["Fault_Class"])
+        if fault_class == "FC0":
+            color = "yellow"
+        elif fault_class == "FC1":
+            color = "orange"
+        elif fault_class == "FC2":
+            color = "red"
+        else:
+            color = "white"  # Default color
+        
         # Temporarily disable sorting
         self.diagnostic_table.setSortingEnabled(False)
         
@@ -89,28 +140,32 @@ class MyMainWindow(QMainWindow, Ui_MainWindow):
         row = self.diagnostic_table.rowCount()
         self.diagnostic_table.insertRow(row)
 
-        self.diagnostic_table.setItem(
-            row, 0, QTableWidgetItem(utils.date_from_timestamp(time.time()))
-        )
-        self.diagnostic_table.setItem(
-            row, 1, QTableWidgetItem(str(message["Diag_Code"]))
-        )
+        timestamp_item = QTableWidgetItem(utils.date_from_timestamp(time.time()))
+        diag_code_item = QTableWidgetItem(str(message["Diag_Code"]))
+        fault_class_item = QTableWidgetItem(fault_class)
 
-        self.diagnostic_table.setItem(
-            row, 2, QTableWidgetItem(str(message["Fault_Class"]))
-        )
+        # Set the color for the items
+        timestamp_item.setForeground(QColor(color))
+        diag_code_item.setForeground(QColor(color))
+        fault_class_item.setForeground(QColor(color))
+
+        self.diagnostic_table.setItem(row, 0, timestamp_item)
+        self.diagnostic_table.setItem(row, 1, diag_code_item)
+        self.diagnostic_table.setItem(row, 2, fault_class_item)
 
         if message["Sel_Cells_NTC"] == 0x1:
-            self.diagnostic_table.setItem(
-                row, 3, QTableWidgetItem(str(message["Cell_Num"]))
-            )
+            cell_num_item = QTableWidgetItem(str(message["Cell_Num"]))
         elif message["Sel_Cells_NTC"] == 0x2:
-            self.diagnostic_table.setItem(
-                row, 3, QTableWidgetItem(str(message["NTC_Num"]))
-            )
+            cell_num_item = QTableWidgetItem(str(message["NTC_Num"]))
         elif message["Sel_Cells_NTC"] == 0x0:
-            self.diagnostic_table.setItem(row, 3, QTableWidgetItem("NA"))
+            cell_num_item = QTableWidgetItem("NA")
+        else:
+            cell_num_item = QTableWidgetItem("")
 
+        # Set the color for the cell/NTC number item
+        cell_num_item.setForeground(QColor(color))
+        self.diagnostic_table.setItem(row, 3, cell_num_item)
+        
         # Re-enable sorting
         self.diagnostic_table.setSortingEnabled(True)
 
@@ -119,3 +174,6 @@ class MyMainWindow(QMainWindow, Ui_MainWindow):
 
         # Resize the columns to fit the content
         self.diagnostic_table.resizeColumnsToContents()
+        # Add a little extra width to the columns
+        for column in range(self.diagnostic_table.columnCount()):
+            self.diagnostic_table.setColumnWidth(column, self.diagnostic_table.columnWidth(column) + 20)

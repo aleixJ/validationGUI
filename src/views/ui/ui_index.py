@@ -219,6 +219,11 @@ class Ui_MainWindow(object):
         self.horizontalLayout_5.setContentsMargins(0, 0, 0, 0)
         self.stackedWidget = QStackedWidget(self.main_screen)
         self.stackedWidget.setObjectName(u"stackedWidget")
+        sizePolicy4 = QSizePolicy(QSizePolicy.Policy.Preferred, QSizePolicy.Policy.Preferred)
+        sizePolicy4.setHorizontalStretch(0)
+        sizePolicy4.setVerticalStretch(0)
+        sizePolicy4.setHeightForWidth(self.stackedWidget.sizePolicy().hasHeightForWidth())
+        self.stackedWidget.setSizePolicy(sizePolicy4)
         self.dashboard = QWidget()
         self.dashboard.setObjectName(u"dashboard")
         self.gridLayout_4 = QGridLayout(self.dashboard)
@@ -782,9 +787,19 @@ class Ui_MainWindow(object):
         self.stackedWidget.addWidget(self.dashboard)
         self.diagnostic = QWidget()
         self.diagnostic.setObjectName(u"diagnostic")
+        sizePolicy4.setHeightForWidth(self.diagnostic.sizePolicy().hasHeightForWidth())
+        self.diagnostic.setSizePolicy(sizePolicy4)
         self.verticalLayout = QVBoxLayout(self.diagnostic)
         self.verticalLayout.setObjectName(u"verticalLayout")
-        self.diagnostic_table = QTableWidget(self.diagnostic)
+        self.horizontalFrame = QFrame(self.diagnostic)
+        self.horizontalFrame.setObjectName(u"horizontalFrame")
+        sizePolicy4.setHeightForWidth(self.horizontalFrame.sizePolicy().hasHeightForWidth())
+        self.horizontalFrame.setSizePolicy(sizePolicy4)
+        self.layout_diagnostic = QHBoxLayout(self.horizontalFrame)
+        self.layout_diagnostic.setSpacing(5)
+        self.layout_diagnostic.setObjectName(u"layout_diagnostic")
+        self.layout_diagnostic.setContentsMargins(0, 0, 0, 0)
+        self.diagnostic_table = QTableWidget(self.horizontalFrame)
         if (self.diagnostic_table.columnCount() < 4):
             self.diagnostic_table.setColumnCount(4)
         __qtablewidgetitem = QTableWidgetItem()
@@ -806,6 +821,7 @@ class Ui_MainWindow(object):
         self.diagnostic_table.setLineWidth(1)
         self.diagnostic_table.setSizeAdjustPolicy(QAbstractScrollArea.AdjustToContents)
         self.diagnostic_table.setAutoScroll(True)
+        self.diagnostic_table.setAutoScrollMargin(16)
         self.diagnostic_table.setAlternatingRowColors(False)
         self.diagnostic_table.setIconSize(QSize(0, 0))
         self.diagnostic_table.setShowGrid(True)
@@ -815,9 +831,50 @@ class Ui_MainWindow(object):
         self.diagnostic_table.horizontalHeader().setCascadingSectionResizes(False)
         self.diagnostic_table.horizontalHeader().setDefaultSectionSize(150)
         self.diagnostic_table.verticalHeader().setVisible(False)
+        self.diagnostic_table.verticalHeader().setMinimumSectionSize(30)
+        self.diagnostic_table.verticalHeader().setDefaultSectionSize(35)
         self.diagnostic_table.verticalHeader().setProperty("showSortIndicator", True)
 
-        self.verticalLayout.addWidget(self.diagnostic_table)
+        self.layout_diagnostic.addWidget(self.diagnostic_table)
+
+        self.verticalFrame = QFrame(self.horizontalFrame)
+        self.verticalFrame.setObjectName(u"verticalFrame")
+        sizePolicy4.setHeightForWidth(self.verticalFrame.sizePolicy().hasHeightForWidth())
+        self.verticalFrame.setSizePolicy(sizePolicy4)
+        self.layout_button_diagnostic = QVBoxLayout(self.verticalFrame)
+        self.layout_button_diagnostic.setSpacing(10)
+        self.layout_button_diagnostic.setObjectName(u"layout_button_diagnostic")
+        self.layout_button_diagnostic.setContentsMargins(10, 5, 5, 0)
+        self.pause_diagnostic_btn = QPushButton(self.verticalFrame)
+        self.pause_diagnostic_btn.setObjectName(u"pause_diagnostic_btn")
+        font8 = QFont()
+        font8.setPointSize(11)
+        self.pause_diagnostic_btn.setFont(font8)
+        self.pause_diagnostic_btn.setStyleSheet(u"color: green")
+        self.pause_diagnostic_btn.setCheckable(True)
+        self.pause_diagnostic_btn.setChecked(False)
+
+        self.layout_button_diagnostic.addWidget(self.pause_diagnostic_btn, 0, Qt.AlignHCenter|Qt.AlignVCenter)
+
+        self.clear_diagnostic_btn = QPushButton(self.verticalFrame)
+        self.clear_diagnostic_btn.setObjectName(u"clear_diagnostic_btn")
+        self.clear_diagnostic_btn.setFont(font8)
+        self.clear_diagnostic_btn.setCheckable(True)
+
+        self.layout_button_diagnostic.addWidget(self.clear_diagnostic_btn, 0, Qt.AlignHCenter|Qt.AlignVCenter)
+
+        self.save_diagnostic_btn = QPushButton(self.verticalFrame)
+        self.save_diagnostic_btn.setObjectName(u"save_diagnostic_btn")
+        self.save_diagnostic_btn.setFont(font8)
+        self.save_diagnostic_btn.setCheckable(True)
+
+        self.layout_button_diagnostic.addWidget(self.save_diagnostic_btn, 0, Qt.AlignHCenter|Qt.AlignVCenter)
+
+
+        self.layout_diagnostic.addWidget(self.verticalFrame, 0, Qt.AlignHCenter|Qt.AlignTop)
+
+
+        self.verticalLayout.addWidget(self.horizontalFrame, 0, Qt.AlignLeft)
 
         self.stackedWidget.addWidget(self.diagnostic)
         self.settings = QWidget()
@@ -921,6 +978,9 @@ class Ui_MainWindow(object):
         ___qtablewidgetitem2.setText(QCoreApplication.translate("MainWindow", u"Fault class", None));
         ___qtablewidgetitem3 = self.diagnostic_table.horizontalHeaderItem(3)
         ___qtablewidgetitem3.setText(QCoreApplication.translate("MainWindow", u"Cell/NTC number", None));
+        self.pause_diagnostic_btn.setText(QCoreApplication.translate("MainWindow", u"Pause Display", None))
+        self.clear_diagnostic_btn.setText(QCoreApplication.translate("MainWindow", u"Clear Log", None))
+        self.save_diagnostic_btn.setText(QCoreApplication.translate("MainWindow", u"Save Log", None))
         self.label_3.setText(QCoreApplication.translate("MainWindow", u"Settings", None))
     # retranslateUi
 
