@@ -7,8 +7,8 @@ from .ui.settingsPage import MySettingsWindow
 
 import utils
 
-from typing import Union
-from typing import Any
+from typing import Union, Any
+from config import Config  # Import the Config class
 
 
 class GuiSignals(QObject):
@@ -21,10 +21,10 @@ class gui_view:
     """
 
     # Constructor
-    def __init__(self):
+    def __init__(self, config: Config):
         self.app = QApplication(sys.argv)
         self.settings_window = MySettingsWindow()
-        self.main_window = MyMainWindow()
+        self.main_window = MyMainWindow(config)  # Pass the config object
         self.interface_selected = None
 
         self.signals = GuiSignals()

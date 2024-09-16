@@ -1,0 +1,17 @@
+# settings.yaml
+
+## Date and time format settings
+# Most popular date formats:
+  # - %d/%m/%Y %H:%M:%S
+  # - %Y-%m-%d %H:%M:%S 
+date_format: "%d/%m/%Y %H:%M:%S"
+
+## Diagnostic settings
+max_diagnostic_messages: 500
+
+# Colors for diagnostic messages
+diagnostic_colors:
+  default: "white"
+  FC0: "yellow"
+  FC1: "orange"
+  FC2: "red"

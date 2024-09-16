@@ -7,7 +7,10 @@
         conda activate <env_name>
         pip install -r requirements.txt
         ```
-
+3. Run the application from the root directory
+    ```bash
+    python .\src\main.py
+    ```
 ## Documentation
 
 ### can_model

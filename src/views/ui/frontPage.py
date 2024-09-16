@@ -3,7 +3,6 @@ from PySide6.QtGui import QAction, QFont, QColor
 from PySide6.QtCore import Qt
 import utils
 import time
-
 import csv
 
 from .ui_index import Ui_MainWindow
@@ -12,10 +11,10 @@ from .ui_index import Ui_MainWindow
 This file is the intermediary between the ui_interface.py and the gui_view.py files.
 """
 
-
 class MyMainWindow(QMainWindow, Ui_MainWindow):
-    def __init__(self):
+    def __init__(self, config):
         super().__init__()
+        self.config = config  # Store the config object
         self.setupUi(self)  # type: ignore
         self.setWindowTitle("Validation BMS")
 
@@ -119,20 +118,13 @@ class MyMainWindow(QMainWindow, Ui_MainWindow):
         
         # Check the Fault_Class and set the color
         fault_class = str(message["Fault_Class"])
-        if fault_class == "FC0":
-            color = "yellow"
-        elif fault_class == "FC1":
-            color = "orange"
-        elif fault_class == "FC2":
-            color = "red"
-        else:
-            color = "white"  # Default color
+        color = self.config.diagnostic_colors.get(fault_class, self.config.diagnostic_colors['default'])
         
         # Temporarily disable sorting
         self.diagnostic_table.setSortingEnabled(False)
         
-        # if the table have more than X rows, remove the last one
-        if self.diagnostic_table.rowCount() > 500:
+        # if the table have more than max_diagnostic_messages rows, remove the last one
+        if self.diagnostic_table.rowCount() > self.config.max_diagnostic_messages:
             self.diagnostic_table.removeRow(self.diagnostic_table.rowCount() - 1)
 
         # Add the message to the table. The timestamp is a new row and the rest of the data is an item
@@ -140,7 +132,7 @@ class MyMainWindow(QMainWindow, Ui_MainWindow):
         row = self.diagnostic_table.rowCount()
         self.diagnostic_table.insertRow(row)
 
-        timestamp_item = QTableWidgetItem(utils.date_from_timestamp(time.time()))
+        timestamp_item = QTableWidgetItem(utils.date_from_timestamp(time.time(), self.config.date_format))
         diag_code_item = QTableWidgetItem(str(message["Diag_Code"]))
         fault_class_item = QTableWidgetItem(fault_class)
 

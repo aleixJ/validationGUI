@@ -44,11 +44,12 @@ def base_name(message: str) -> str:
     return re.sub(r"_\d+$", "", message)
 
 
-def date_from_timestamp(timestamp: float) -> str:
+def date_from_timestamp(timestamp: float, date_format: str) -> str:
     """
     Convert a timestamp to a date and time string.
-    Format: dd/mm/yyyy hh:mm:ss
+    Format: defined in the config file
     :param timestamp: The timestamp
+    :param date_format: The date format
     :return: string with the date and time
     """
-    return datetime.fromtimestamp(timestamp).strftime("%d/%m/%Y %H:%M:%S")
+    return datetime.fromtimestamp(timestamp).strftime(date_format)
