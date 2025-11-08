@@ -1,4 +1,7 @@
+https://github.com/user-attachments/assets/8288f189-ed67-489f-a98c-ac4abd3bca1c
+
 ## Setup
+
 1. Clone the repository
 2. Create a virtual environment
    - Anaconda
